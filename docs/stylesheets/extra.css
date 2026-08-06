@@ -1,3 +1,4 @@
+#################Make all titles bold and white
 .md-typeset h1,
 .md-typeset h2,
 .md-typeset h3,
@@ -6,4 +7,19 @@
 .md-typeset h6 {
   color: #ffffff;
   font-weight: bold;
+}
+
+#################Title Bar Color
+.md-header {
+  background: linear-gradient(90deg, #3ec542, #3b7e3d);
+}
+
+#################Title Bar Shadow
+.md-header__topic {
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+#################Hovered text is purple
+.md-typeset a:hover {
+  color: #774eee;
 }
