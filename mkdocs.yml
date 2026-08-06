@@ -1,0 +1,22 @@
+site_name: Etherion Designs Plugin Docs
+
+theme:
+  name: material
+  palette:
+    scheme: slate
+    primary: indigo
+    accent: blue
+  features:
+    - content.code.copy
+
+markdown_extensions:
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - attr_list
+
+plugins:
+  - search
+  - awesome-pages
+  - ezlinks:
+      wikilinks: true
+  - autorefs
