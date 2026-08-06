@@ -2,7 +2,7 @@ site_name: Etherion Foliage Plugin Documentation
 
 theme:
   name: material
-  logo: assets/logo.svg
+  logo: assets/logoicon.svg
   palette:
     scheme: slate
     primary: green
