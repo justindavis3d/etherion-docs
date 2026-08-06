@@ -1,31 +1,30 @@
 # Installation
 
 ## Getting Started
-
-![397](../assets/Documentation_Installation_OpenPluginsMenu.webp)
-
 Before starting, be sure that your Plugin is enabled.  
 Go to **Edit > Plugins**.
 
-  
-  
-Activate the Etherion Foliage Plugin.
+![397](../assets/Documentation_Installation_OpenPluginsMenu.webp)
 
+
+
+Activate the Etherion Foliage Plugin.
 ![](../assets/Documentation_Prerequisites_EtherionPlugin.webp)
 
-![510](../assets/Documentation_Installation_ShowPluginContent.webp)
 
 If you cannot see our Plugin folder, go to the content browser.  
 Click Settings, then make sure **“Show Plugin Content”** is checked.  
 Sometimes you may also have to click **“Show Engine Content”**.
+![510](../assets/Documentation_Installation_ShowPluginContent.webp)
+
 
 Open up the Level called **“EtherionFoliagePlugin_Examples**“.
-
 ![](../assets/Documentation_Installation_ExampleLevelLocation.webp)
 
-![](../assets/Documentation_Installation_ExampleLevelScreenshot-1024x555.webp)
 
 This is where all your content examples and installation notes are located. Please be sure to read any notes included here before continuing!
+![](../assets/Documentation_Installation_ExampleLevelScreenshot-1024x555.webp)
+
 
 ---
 
@@ -35,7 +34,6 @@ This is where all your content examples and installation notes are located. Plea
 
 Under **Project Settings > Asset Manager**, there must be the following settings under **Primary Asset Types to Scan**  
 This ensures that the **Foliage Map** asset type is packaged along with the rest of the game.
-
 ![](../assets/Documentation_Packaging_FoliageMap-1024x585.webp)
 
 ---

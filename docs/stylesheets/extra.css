@@ -44,3 +44,9 @@ body {
   background: linear-gradient(170deg, #16171c, #1f232b);
   background-attachment: fixed;
 }
+
+/* Brighten line spaces */
+.md-typeset hr {
+  height: 2px;
+  background-color: rgba(255, 255, 255, 0.3);
+}
