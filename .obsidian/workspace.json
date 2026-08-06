@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/5 Resources/2 Lite Features List.md",
+                "file": "docs/index.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2 Lite Features List"
+              "title": "index"
             }
           },
           {
@@ -108,7 +108,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/5 Resources/2 Lite Features List.md",
+                "file": "docs/index.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -118,7 +118,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for 2 Lite Features List"
+              "title": "Backlinks for index"
             }
           },
           {
@@ -127,12 +127,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/5 Resources/2 Lite Features List.md",
+                "file": "docs/index.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from 2 Lite Features List"
+              "title": "Outgoing links from index"
             }
           },
           {
@@ -170,13 +170,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/5 Resources/2 Lite Features List.md",
+                "file": "docs/index.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 2 Lite Features List"
+              "title": "Outline of index"
             }
           }
         ]
@@ -199,10 +199,12 @@
   },
   "active": "1ed9d4baf41db19a",
   "lastOpenFiles": [
+    "docs/1  Foliage Physics/1 Installation.md",
+    "docs/index.md",
+    "docs/5 Resources/2 Lite Features List.md",
     "New folder",
     "docs/5 Resources/3 FAB – Environment Installation.md",
     "docs/5 Resources/1 Pro Features List.md",
-    "docs/5 Resources/2 Lite Features List.md",
     "docs/3 Advanced Features/4 Footstep Sound Effects.md",
     "docs/4  Environment Features/5 Water & Fluid Simulation - PRO.md",
     "docs/4  Environment Features/1 Wind System.md",
@@ -226,7 +228,6 @@
     "docs/2  Creating Custom Foliage/4 Foliage Influencer – Advanced.md",
     "2 Creating Custom Foliage",
     "docs/5 Resources/Support Guide.md",
-    "docs/index.md",
     "docs/assets/Documentation_RisingWater_Location2-1024x342.webp",
     "docs/assets/Documentation_RisingWater_RVT3-1024x536.webp",
     "docs/assets/Documentation_RisingWater_Mannequin-1024x892.webp",
