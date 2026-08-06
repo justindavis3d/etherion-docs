@@ -21,6 +21,7 @@ plugins:
   - ezlinks:
       wikilinks: true
   - autorefs
+  - glightbox
   
 extra_css:
   - stylesheets/extra.css

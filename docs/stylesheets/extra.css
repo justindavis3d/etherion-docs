@@ -38,3 +38,9 @@
 .md-content__inner {
   margin-bottom: 4rem;
 }
+
+/* Vertical background gradient with a slight slant, fixed to the viewport */
+body {
+  background: linear-gradient(170deg, #16171c, #1f232b);
+  background-attachment: fixed;
+}

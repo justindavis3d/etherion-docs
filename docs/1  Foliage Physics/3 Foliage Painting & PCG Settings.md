@@ -55,7 +55,6 @@ Additionally, you may also want the camera movement to not be affected by these 
 ## PCG Setup [PRO ONLY]
 
 To get PCG working with our plugin, its very simple.  
-The static mesh spawner needs to use the `FoliageInstancedStaticMeshComponent` class.  
+The static mesh spawner needs to use the `EDInstancedFoliageComponent` class.  
 If that is done, everything should be working correctly with the rest of our system.
-
-![](../assets/Documentation_PaintingFoliage_PCG-1024x359.webp)
+![[docs/assets/Documentation_PCG_Settings.webp]]

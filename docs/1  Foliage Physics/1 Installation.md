@@ -2,7 +2,7 @@
 
 ## Getting Started
 
-![](../assets/Documentation_Installation_OpenPluginsMenu.webp)
+![397](../assets/Documentation_Installation_OpenPluginsMenu.webp)
 
 Before starting, be sure that your Plugin is enabled.  
 Go to **Edit > Plugins**.
@@ -13,7 +13,7 @@ Activate the Etherion Foliage Plugin.
 
 ![](../assets/Documentation_Prerequisites_EtherionPlugin.webp)
 
-![](../assets/Documentation_Installation_ShowPluginContent.webp)
+![510](../assets/Documentation_Installation_ShowPluginContent.webp)
 
 If you cannot see our Plugin folder, go to the content browser.  
 Click Settings, then make sure **“Show Plugin Content”** is checked.  
@@ -56,7 +56,7 @@ Click **Accept**.
 
 Our bonus Alien Physics World content includes a vehicle and water. To get it working, be sure to enable the **ChaosVehiclesPlugin** and the **Water** Plugin.
 
-![](../assets/EditPlugins-1.webp)
+![298](../assets/EditPlugins-1.webp)
 
 To do this, click **Edit > Plugins**.  
   

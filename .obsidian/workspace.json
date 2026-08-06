@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/index.md",
+                "file": "docs/1  Foliage Physics/3 Foliage Painting & PCG Settings.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "index"
+              "title": "3 Foliage Painting & PCG Settings"
             }
           },
           {
@@ -108,7 +108,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/index.md",
+                "file": "docs/1  Foliage Physics/3 Foliage Painting & PCG Settings.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -118,7 +118,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for index"
+              "title": "Backlinks for 3 Foliage Painting & PCG Settings"
             }
           },
           {
@@ -127,12 +127,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/index.md",
+                "file": "docs/1  Foliage Physics/3 Foliage Painting & PCG Settings.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from index"
+              "title": "Outgoing links from 3 Foliage Painting & PCG Settings"
             }
           },
           {
@@ -170,13 +170,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/index.md",
+                "file": "docs/1  Foliage Physics/3 Foliage Painting & PCG Settings.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of index"
+              "title": "Outline of 3 Foliage Painting & PCG Settings"
             }
           }
         ]
@@ -199,6 +199,10 @@
   },
   "active": "1ed9d4baf41db19a",
   "lastOpenFiles": [
+    "docs/assets/Documentation_PCG_Settings.webp",
+    "docs/assets/Pasted image 20260806170803.png",
+    "docs/1  Foliage Physics/1 Installation.md",
+    "docs/index.md",
     "docs/assets/logoicon.svg",
     "docs/assets/logo.svg",
     "docs/CNAME",
@@ -210,8 +214,6 @@
     "docs/stylesheets/extra.css",
     "docs/stylesheets/New Text Document.txt",
     "docs/stylesheets",
-    "docs/1  Foliage Physics/1 Installation.md",
-    "docs/index.md",
     "docs/5 Resources/2 Lite Features List.md",
     "New folder",
     "docs/5 Resources/3 FAB – Environment Installation.md",
@@ -242,8 +244,6 @@
     "docs/assets/Documentation_RisingWater_RVT3-1024x536.webp",
     "docs/assets/Documentation_RisingWater_Mannequin-1024x892.webp",
     "docs/assets/Documentation_RisingWater_HeightPlane_Move-1024x558.webp",
-    "docs/assets/Documentation_RisingWater_HeightPlaneSelect2.webp",
-    "docs/assets/Documentation_RisingWater_Result-1024x623.webp",
     "private"
   ]
 }
