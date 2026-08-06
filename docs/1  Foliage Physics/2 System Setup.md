@@ -173,7 +173,7 @@ By default, we recommend **World Dynamic**.
 Finally, under the **Object Responses** section,  
 you must ensure that the Mesh has the **Physics Body** response set to **Block**.
 
-## Chaos Vehicle Collision Settings
+## Chaos Vehicle Collision Settings {#chaos-vehicle-collision-settings}
 
 If the Blueprint you are working on is a Chaos Vehicle, you may notice some issues with the wheels bouncing all over your foliage.  
 This is because the Wheel utilises a line trace, and by default, it is set to hit PhysicsBody’s.

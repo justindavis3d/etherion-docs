@@ -20,7 +20,7 @@ We have a number of nodes you can use to apply damage and physics impulses to wh
 ## Vehicle Support
 
 We’ve included a great example of how to set up our foliage system with Chaos Vehicles!  
-[[1 Foliage Physics/2 System Setup#Chaos Vehicle Collision Settings|Click here to find out how]]
+[Click here to find out how][chaos-vehicle-collision-settings]
 
 <div style="aspect-ratio:16/9; position:relative; width:100%;">
   <iframe 
@@ -36,7 +36,7 @@ We’ve included a great example of how to set up our foliage system with Chaos 
 
 ## Specific Interaction Detection
 
-You can now detect exactly _which_ object interacted with the foliage—letting you trigger custom responses for each one. In this video, different weapons trigger unique material animations when they hit.  [[2 Creating Custom Foliage/4 Foliage Influencer – Advanced#Hitter ID & Damage|Click here to find out how to do it!]]
+You can now detect exactly _which_ object interacted with the foliage—letting you trigger custom responses for each one. In this video, different weapons trigger unique material animations when they hit.  [Click here to find out how to do it!][hitter-id-damage]
 <div style="aspect-ratio:16/9; position:relative; width:100%;">
   <iframe 
     loading="lazy"
@@ -67,7 +67,7 @@ A foliage instance painted with the foliage tool is essentially an **Instanced 
 In our Lite system, foliage uses a collision box based on its scale to stay active while players or objects are nearby. This works well for simple foliage, but fails with long, complex assets like vines—since bones can move outside the original box after being hit.
 
 To fix this, we added a smarter system that checks distance from each bone instead. It’s more accurate for things like vines, but slightly heavier on performance—so only use it when needed.  
-[[2 Creating Custom Foliage/2 Foliage Blueprint – Basics#PRO Influencer Detection Settings|Click here to learn how to do it.]]
+[Click here to learn how to do it.][pro-influencer-detection-settings]
 
 <div style="padding:56.25% 0 0 0;position:relative;">
   <iframe 
@@ -107,7 +107,7 @@ This component can integrated into any kind of blueprint, not just foliage – o
 
 Some foliage may not require a skeletal mesh, and instead only require a static mesh. Landmines are one such example.  
 You can now disable or enable the static mesh or skeletal mesh inside your Foliage Blueprint.  
-[[2 Creating Custom Foliage/3 Foliage Blueprint – Advanced#Static or Skeletal|Click here to learn how!]]
+[Click here to learn how!][static-or-skeletal]
 <div style="aspect-ratio:16/9; position:relative; width:100%;">
   <iframe 
     loading="lazy"
@@ -124,7 +124,7 @@ You can now disable or enable the static mesh or skeletal mesh inside your Folia
 Object Pooling is a system that reuses objects instead of constantly spawning and destroying them when the game needs those objects.  
 It maintains a pool of ready-to-use assets by borrowing and returning them from a memory ‘pool’ as the game requires them.  
 Our Pro version utilizes an enhanced system of object pooling to account for the inevitable performance drop that would occur when an explosion affects loads of foliage at once.  
-[[2 Creating Custom Foliage/3 Foliage Blueprint – Advanced#Foliages & Object Pooling|Click here to learn how to apply it to your custom foliages.]]
+[[3 Foliage Blueprint – Advanced#Foliage & Object Pooling|Click here to learn how to apply it to your custom foliages.]]
 <div style="aspect-ratio:16/9; position:relative; width:100%;">
   <iframe 
     loading="lazy"
@@ -149,7 +149,7 @@ Add variety to your foliage with our Automatic Material Variation function! It m
 Unreal’s native grass landscape system can often take minutes for the grass to appear in-game upon opening a level.  
 We have no idea why they haven’t patched this, so we did! Just drag in **BP_GrassLoader** into your level, and set the designated landscape in the details panel and it will instantly load landscape grass. 
 
-[[3 Advanced Features/2 BONUS Foliage Tools - PRO#Instant Grass Loader|Click here to learn more]]
+[Click here to learn more][instant-grass-loader]
 <div style="aspect-ratio:16/9; position:relative; width:100%;">
   <iframe 
     loading="lazy"

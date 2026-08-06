@@ -86,7 +86,7 @@ Do this for any meshes you want affecting grass trails regardless of whether the
 
 ---
 
-## **Water Plugin Compatibility**
+## Water Plugin Compatibility {#water-plugin-compatibility}
 
 The underwater fog post-processing material that comes with Unreal’s **Water Plugin** overrides the scenecapture that we use to create grass trails.  
 It stops our system from working.

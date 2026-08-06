@@ -5,7 +5,7 @@ Please note that most of these features are only available in the **Pro Version
 
 ---
 
-# Foliage & Object Pooling
+# Foliage Object Pooling
 
 Before creating custom logic in your **Foliage Blueprint**, you must first understand how its object pooling system functions!
 
@@ -21,7 +21,7 @@ Without any custom logic, the initialization will be managed automatically.
 However, if you add custom features, you might need to implement your own initialization logic to ensure it works with the pooling system  
   
 In a Foliage Blueprint, the **Construction Script** and **Event BeginPlay** is triggered only once, when the Blueprint is first created.  
-Since [[2 Creating Custom Foliage/2 Foliage Blueprint – Basics#Object Pooling|the set number]] of **Foliage Blueprints** are pre-loaded into the pool at the start of the game, the **Construction Script** and **BeginPlay** is usually called while they’re still in the pool, not in the level.  
+Since [the set number][object-pooling] of **Foliage Blueprints** are pre-loaded into the pool at the start of the game, the **Construction Script** and **BeginPlay** is usually called while they’re still in the pool, not in the level.  
   
 The **Foliage Blueprint** will only be placed in the level to become interactable, when a **Foliage Influencer** touches a Foliage Instance.  
 At this moment, the influencer will get the Foliage Blueprint from the Pool, and swap it out with the Foliage Instance.  
@@ -113,7 +113,7 @@ _Remember, the **Set Simulate** node will only work if **UseSkeletalMesh** i
 
 ---
 
-## **Static or Skeletal**
+## Static or Skeletal {#static-or-skeletal}
 
 If you want the standard type of foliage with a simulated skeletal mesh, the default settings will ensure that **Simulate** and **Use Skeletal Mesh** are turned on, while **Render Static Mesh** is turned off. This ensures that your foliage skeletal mesh is visible and simulating physics, while the associated staticmesh is not visible.
 

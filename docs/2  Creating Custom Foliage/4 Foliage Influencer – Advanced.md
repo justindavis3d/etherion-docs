@@ -20,7 +20,7 @@ Enable the “**Hit Plants**” checkbox to enable the **Hit** feature.
   
 Also, feel free to change the **Hitter ID**, **Hit Magnitude**, **Hit Damage** and **Velocity Change** _(which will be explained below)_
 
-#### Hitter ID & Damage
+#### Hitter ID & Damage {#hitter-id-damage}
 
 The **Hitter ID** is a name assigned to the Foliage Influencer, which can be accessed within the Foliage Blueprint during the **Event OnPlantHit**.  
 You may use other nodes with **Hitter ID** to verify if the Influencer causing the Hit is the specific one you want. In short, it lets you trigger unique functions for particular influencers. The **Hitter ID** is stored as a string.

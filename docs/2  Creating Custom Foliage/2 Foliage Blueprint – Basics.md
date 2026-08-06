@@ -141,7 +141,7 @@ All of the settings for the rest of this page will be found under
 
 ---
 
-## Object Pooling
+## Object Pooling {#object-pooling}
 
 **Object Pooling** is a system that reuses objects rather than constantly spawning and destroying them, improving performance by reducing memory allocations.  
 Without it, frequent spawning and destroying can hurt game performance, especially with many dynamic objects such as **Foliage Blueprints!**
@@ -189,7 +189,7 @@ This value controls how many seconds it takes for the foliage to smoothly blend 
 
 ---
 
-## PRO Influencer Detection Settings
+## PRO Influencer Detection Settings {#pro-influencer-detection-settings}
 
 ![](../assets/Documentation_BPBasics_InfluencerDetection.webp)
 

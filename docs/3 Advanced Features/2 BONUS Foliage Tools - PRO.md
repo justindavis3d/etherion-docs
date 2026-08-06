@@ -1,5 +1,5 @@
 # BONUS Foliage Tools - PRO
-## Instant Grass Loader
+## Instant Grass Loader {#instant-grass-loader}
 
 For some reason, Unreal Engine loads grass extremely slowly, and the developers still havent fixed this issue.  
 So we fixed it for you! Navigate to **Content / AlienPhysicsWorld / Blueprints / Ground /**
@@ -74,4 +74,4 @@ Feel free to duplicate, position, rotate and scale this actor all over your leve
 
 ## Issues?
 
-If your foliage tool blueprints are not functioning correctly, please ensure your all your foliage files have the correct **[[2 Creating Custom Foliage/1 Preparing the Assets#Naming Conventions|naming conventions]]**.
+If your foliage tool blueprints are not functioning correctly, please ensure your all your foliage files have the correct **[naming conventions][naming-conventions]**.

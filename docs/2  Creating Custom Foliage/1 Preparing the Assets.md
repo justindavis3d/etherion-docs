@@ -114,7 +114,7 @@ You can find these in their respective folders under **Content / AlienPhysicsWo
 
 ---
 
-# Naming Conventions
+# Naming Conventions {#naming-conventions}
 
 Naming conventions are not strict, however, there is one rule you must follow if you plan to create Custom Foliage:
 
@@ -136,7 +136,7 @@ To correct this, here some examples of how you **SHOULD** name your foliages:
 - SM_Gaspods_X_Destroyed
 
 **BP_Gaspods_X_Whole** cannot be found inside **BP_Gaspods_X_Destroyed** which ensures they will not conflict.  
-So far the only blueprints that utilize naming conventions are our **[[docs/3 Advanced Features/2 BONUS Foliage Tools - PRO#Foliage Group Placement Blueprint|Foliage Placement Tools]]**, but you should be following these conventions even if you are not planning on using these tools in case there are some updates in the future.
+So far the only blueprints that utilize naming conventions are our **[Foliage Placement Tools][grouped-foliage-placement]**, but you should be following these conventions even if you are not planning on using these tools in case there are some updates in the future.
 
 ---
 

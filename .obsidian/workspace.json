@@ -8,31 +8,17 @@
         "type": "tabs",
         "children": [
           {
-            "id": "1ed9d4baf41db19a",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/1  Foliage Physics/1 Installation.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "1 Installation"
-            }
-          },
-          {
             "id": "c0231c3e8d979020",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/5 Resources/2 Lite Features List.md",
+                "file": "docs/3 Advanced Features/5 Object Pooling.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2 Lite Features List"
+              "title": "5 Object Pooling"
             }
           }
         ]
@@ -199,32 +185,39 @@
       "bases:Create new base": false
     }
   },
-  "active": "1ed9d4baf41db19a",
+  "active": "c0231c3e8d979020",
   "lastOpenFiles": [
+    "rename_folders.py",
+    "Unconfirmed 449250.crdownload",
+    "docs/2  Creating Custom Foliage/3 Foliage Blueprint – Advanced.md",
+    "docs/3 Advanced Features/5 Object Pooling.md",
+    "docs/2  Creating Custom Foliage/2 Foliage Blueprint – Basics.md",
+    "docs/5 Resources/1 Pro Features List.md",
+    "2 Creating Custom Foliage/3 Foliage Blueprint – Advanced.md",
+    "2 Creating Custom Foliage",
+    "2 Creating Custom Foliage/2 Foliage Blueprint – Basics.md",
+    "docs/4  Environment Features/4 Grass & Landscape Effects - PRO.md",
+    "Unconfirmed 360048.crdownload",
+    "convert_links.py",
+    "Unconfirmed 162474.crdownload",
+    "docs/1  Foliage Physics/2 System Setup.md",
+    "docs/1  Foliage Physics/1 Installation.md",
     "fix_image_sizes.py",
     "Unconfirmed 714563.crdownload",
     "docs/javascript/extra.js",
     "docs/javascript/New Text Document.txt",
     "docs/javascript",
-    "docs/New folder",
     "private/Anaconda instructions.md",
-    "docs/1  Foliage Physics/1 Installation.md",
     "docs/1  Foliage Physics/3 Foliage Painting & PCG Settings.md",
     "docs/assets/Documentation_PCG_Settings.webp",
     "docs/assets/Pasted image 20260806170803.png",
     "docs/index.md",
     "docs/assets/logoicon.svg",
     "docs/assets/logo.svg",
-    "docs/CNAME",
-    "docs/CNAME.txt",
-    "docs/New Text Document.txt",
     "docs/assets/Logo.svg",
     "docs/assets/Logoicon.svg",
-    "docs/stylesheets/extra.css",
-    "docs/stylesheets/New Text Document.txt",
     "docs/5 Resources/2 Lite Features List.md",
     "docs/5 Resources/3 FAB – Environment Installation.md",
-    "docs/5 Resources/1 Pro Features List.md",
     "docs/3 Advanced Features/4 Footstep Sound Effects.md",
     "docs/4  Environment Features/5 Water & Fluid Simulation - PRO.md",
     "docs/4  Environment Features/1 Wind System.md",
@@ -232,18 +225,11 @@
     "docs/4  Environment Features/3 Lightning & P.O.M Shadows - PRO.md",
     "docs/3 Advanced Features/2 BONUS Foliage Tools - PRO.md",
     "docs/4  Environment Features/2 Weather System - PRO.md",
-    "docs/2  Creating Custom Foliage/2 Foliage Blueprint – Basics.md",
-    "2 Creating Custom Foliage/2 Foliage Blueprint – Basics.md",
-    "docs/2  Creating Custom Foliage/3 Foliage Blueprint – Advanced.md",
     "docs/4  Environment Features/6 Rising Water Blueprint - PRO.md",
     "docs/2  Creating Custom Foliage/6 Foliage Link System - PRO.md",
     "docs/2  Creating Custom Foliage/5 Destructible Foliages - PRO.md",
     "docs/3 Advanced Features/3 Tweener Component - PRO.md",
-    "docs/3 Advanced Features/1 Saving and Loading Foliages - PRO.md",
-    "docs/4  Environment Features/4 Grass & Landscape Effects - PRO.md",
     "docs/assets/Documentation_GrassTrailEffects_BlackAndWhite_Bands.webp",
-    "private/6 Weapon System - PRO.md",
-    "docs/3 Advanced Features/6 Weapon System - PRO.md",
     "docs/assets/Documentation_RisingWater_Location2-1024x342.webp",
     "docs/assets/Documentation_RisingWater_RVT3-1024x536.webp",
     "docs/assets/Documentation_RisingWater_Mannequin-1024x892.webp"

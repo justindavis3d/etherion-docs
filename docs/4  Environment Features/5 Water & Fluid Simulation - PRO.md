@@ -302,7 +302,7 @@ The Grass Trails system that we have designed utilises a postprocess layer calle
 Unfortunately, Unreal Engine’s underwater post-process materials override the **Scene Capture**, disabling the grass trails!  
 To view how to fix this, please navigate to the Grass Trails documentation page:
 
-**[[4 Environment Features/4 Grass & Landscape Effects - PRO#Water Plugin Compatibility|Grass Trails Compatibility]]**
+**[Grass Trails Compatibility][water-plugin-compatibility]**
 
 ---
 

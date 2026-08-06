@@ -15,7 +15,7 @@ This page will walk through the entire process, step by step, explaining how to 
 
 _Note: This system is a **Pro only** feature.  
 In the **Lite** version it will just create a new object each time user acquires an actor and destroys it when returned to the pool.  
-Only the **[[3 Advanced Features/5 Object Pooling#Hard Limit|hard limit]]** applies in the **Lite** version._
+Only the **[hard limit][hard-limit]** applies in the **Lite** version._
 
 ## Key Components
 
@@ -54,7 +54,7 @@ But if it’s a smaller gathering of less people, you only keep a few extras nea
 
 To disable the **Soft Limit**, set it to `0` in the poolable actor’s details panel.
 
-#### Hard Limit
+#### Hard Limit {#hard-limit}
 
 The hard limit is the maximum number of actors the system can pool, similar to setting a firm cap on how many guests can attend your party.  
 Once this limit is reached, no new actors will be spawned by the system, and it will a return null/invalid actor on acquire, signaling that it cannot provide a new actor.  
