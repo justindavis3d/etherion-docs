@@ -199,12 +199,15 @@
   },
   "active": "1ed9d4baf41db19a",
   "lastOpenFiles": [
+    "docs/CNAME",
+    "docs/CNAME.txt",
+    "docs/New Text Document.txt",
+    "docs/New folder",
     "docs/assets/Logo.svg",
     "docs/assets/Logoicon.svg",
     "docs/stylesheets/extra.css",
     "docs/stylesheets/New Text Document.txt",
     "docs/stylesheets",
-    "docs/New folder",
     "docs/1  Foliage Physics/1 Installation.md",
     "docs/index.md",
     "docs/5 Resources/2 Lite Features List.md",
@@ -240,10 +243,7 @@
     "docs/assets/Documentation_RisingWater_HeightPlaneSelect2.webp",
     "docs/assets/Documentation_RisingWater_Result-1024x623.webp",
     "docs/assets/Documentation_RisingWater_RVT_Height.webp",
-    "docs/assets/Documentation_RisingWater_RVT_Maps.webp",
     "private",
-    "docs/assets",
-    "download_images.py",
-    "Unconfirmed 560966.crdownload"
+    "docs/assets"
   ]
 }
