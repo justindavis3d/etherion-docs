@@ -114,9 +114,6 @@ All of our purchased code is open to be edited in any way, so long as you respec
 We intend to keep developing and improving our plugin, but if a meteor strikes our studio and we are all wiped out, you'll be safe knowing you can still recompile it for the latest engine version on your own!
 
 ---
-
-## Pro Features
-
 <div style="text-align: center; padding: 2.5rem 1.5rem; margin: 1rem 0; background-color: transparent;">
   <p style="font-size: 1.8rem; font-weight: 700; line-height: 1.4; color: #ffffff; margin: 0 0 1rem 0;">
     "Lite is cool,<br>
