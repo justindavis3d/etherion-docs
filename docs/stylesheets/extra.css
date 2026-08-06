@@ -1,4 +1,4 @@
-#################Make all titles bold and white
+/* Make all titles bold and white */
 .md-typeset h1,
 .md-typeset h2,
 .md-typeset h3,
@@ -9,17 +9,32 @@
   font-weight: bold;
 }
 
-#################Title Bar Color
+/* Title Bar Color */
 .md-header {
   background: linear-gradient(90deg, #3ec542, #3b7e3d);
 }
 
-#################Title Bar Shadow
+/* Title Bar Shadow */
 .md-header__topic {
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
-#################Hovered text is purple
+/* Hovered text is purple */
 .md-typeset a:hover {
   color: #774eee;
+}
+
+/* Hides the repeated site title above the sidebar navigation */
+.md-nav--primary .md-nav__title {
+  display: none;
+}
+
+/* Hides the Made with Material for MkDocs watermark */
+.md-copyright {
+  display: none !important;
+}
+
+/* Adds breathing room between the end of page content and the footer */
+.md-content__inner {
+  margin-bottom: 4rem;
 }
