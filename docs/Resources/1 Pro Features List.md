@@ -101,7 +101,7 @@ Imagine trying to create a material animation each time a foliage is interacted 
 These tweening animations are highly performant, allowing your player to interact with hundreds of animated foliage without issues.  
   
 This component can integrated into any kind of blueprint, not just foliage – opening the door to a wide range of possibilities.  
-[[3 Advanced Features/3 Tweener Component - PRO|Click here to learn more!]]
+[[Advanced Features/3 Tweener Component - PRO|Click here to learn more!]]
 
 ### Static-Mesh Only Foliages
 

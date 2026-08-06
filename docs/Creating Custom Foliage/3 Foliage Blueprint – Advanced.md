@@ -216,7 +216,7 @@ _Note: The **ED Tweener Component** is only available in the **[Pro Version](
 Since it’s packed with features, we’ve handled the documentation on a different page.  
 However, once you’ve finished reading, feel free to return to this page to see examples of how it can be used.
 
-**[[3 Advanced Features/3 Tweener Component - PRO|Tweener Component Documentation]]**
+**[[Advanced Features/3 Tweener Component - PRO|Tweener Component Documentation]]**
 
 ## Basic Material Example [PRO]
 
