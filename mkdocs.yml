@@ -1,11 +1,12 @@
-site_name: Etherion Designs Plugin Docs
+site_name: Etherion Foliage Plugin Documentation
 
 theme:
   name: material
+  logo: assets/logo.svg
   palette:
     scheme: slate
-    primary: indigo
-    accent: blue
+    primary: green
+    accent: violet
   features:
     - content.code.copy
 
@@ -20,3 +21,6 @@ plugins:
   - ezlinks:
       wikilinks: true
   - autorefs
+  
+extra_css:
+  - stylesheets/extra.css
