@@ -3,9 +3,9 @@ Thanks for supporting the project with a proper license, it’s what lets us kee
 Need to check what your license covers? Visit our quick **[[4 Licensing|Licensing Page]]** for all the details.
 
 ### Important Note!
-
-**We’ve updated the folder structure, so some docs and images may be slightly out of date.  
-File names are the same - just search in the Content Browser if something looks different.**
+<span class="glow-pulse">
+*We’ve updated the folder structure, so some docs and images may be slightly out of date. 
+File names are the same - just search in the Content Browser if something looks different.*</span>
 
 
 ### Quickstart Guide

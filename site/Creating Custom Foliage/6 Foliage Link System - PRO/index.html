@@ -1,0 +1,1417 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../5%20Destructible%20Foliages%20-%20PRO/">
+      
+      
+        <link rel="next" href="../../Environment%20Features/1%20Wind%20System/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Foliage Link System - PRO - Etherion Foliage Plugin Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="green" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#foliage-link-system-pro" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Etherion Foliage Plugin Documentation" class="md-header__button md-logo" aria-label="Etherion Foliage Plugin Documentation" data-md-component="logo">
+      
+  <img src="../../assets/logoicon.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Etherion Foliage Plugin Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Foliage Link System - PRO
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix="">
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Etherion Foliage Plugin Documentation" class="md-nav__button md-logo" aria-label="Etherion Foliage Plugin Documentation" data-md-component="logo">
+      
+  <img src="../../assets/logoicon.svg" alt="logo">
+
+    </a>
+    Etherion Foliage Plugin Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix="">
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2">
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced Features
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Advanced Features
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Advanced%20Features/1%20Saving%20and%20Loading%20Foliages%20-%20PRO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Saving and Loading Foliages - PRO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Advanced%20Features/2%20BONUS%20Foliage%20Tools%20-%20PRO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BONUS Foliage Tools - PRO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Advanced%20Features/3%20Tweener%20Component%20-%20PRO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tweener Component - PRO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Advanced%20Features/4%20Footstep%20Sound%20Effects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Footstep Sound Effects
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Advanced%20Features/5%20Object%20Pooling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Object Pooling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked="">
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Creating Custom Foliage
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Creating Custom Foliage
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1%20Preparing%20the%20Assets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Preparing your Assets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2%20Foliage%20Blueprint%20%E2%80%93%20Basics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Foliage Blueprint – Basics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3%20Foliage%20Blueprint%20%E2%80%93%20Advanced/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Foliage Blueprint – Advanced
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4%20Foliage%20Influencer%20%E2%80%93%20Advanced/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Foliage Influencer – Advanced
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5%20Destructible%20Foliages%20-%20PRO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Destructible Foliages - PRO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Foliage Link System - PRO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4">
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Environment Features
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Environment Features
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Environment%20Features/1%20Wind%20System/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wind System
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Environment%20Features/2%20Weather%20System%20-%20PRO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Weather System - PRO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Environment%20Features/3%20Lightning%20%26%20P.O.M%20Shadows%20-%20PRO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2D Background Lightning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Environment%20Features/4%20Grass%20%26%20Landscape%20Effects%20-%20PRO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Grass &amp; Landscape Effects - PRO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Environment%20Features/5%20Water%20%26%20Fluid%20Simulation%20-%20PRO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Water &amp; Fluid Simulation - PRO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Environment%20Features/6%20Rising%20Water%20Blueprint%20-%20PRO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rising Water Blueprint - PRO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5">
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Foliage Physics
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Foliage Physics
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Foliage%20Physics/1%20Installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Foliage%20Physics/2%20System%20Setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Foliage%20Physics/3%20Foliage%20Painting%20%26%20PCG%20Settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Foliage Painting &amp; PCG Settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Foliage%20Physics/4%20Licensing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Licensing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6">
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Resources
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Resources/1%20Pro%20Features%20List/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pro Features List
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Resources/2%20Lite%20Features%20List/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lite Features List
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Resources/3%20FAB%20%E2%80%93%20Environment%20Installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAB – Environment Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Resources/Support%20Guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Support Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="foliage-link-system-pro">Foliage Link System - PRO</h1>
+<p>Unreal’s foliage tool paints hierarchical instanced static meshes.<br>
+They are very optimized, but they lack the ability to play sounds, particle effects and other ambient features. They are static-meshes only.  </p>
+<p>We built the&nbsp;<strong>Foliage Link System</strong>&nbsp;to overcome this limitation. It allows you to place additional Blueprints at the same positions as foliage instances, linking them directly to their corresponding foliage Blueprints for two-way communication. This setup makes it possible to add ambient sounds, effects, and interactions to foliage,&nbsp;<strong>even before they’ve been converted into foliage Blueprints</strong>.  </p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_FoliageLink_Example.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_FoliageLink_Example.webp"></a></p>
+<hr>
+<h1 id="basic-tutorial">Basic Tutorial</h1>
+<p>To help you understand how the system functions, we’ll guide you through the process of creating a basic linked foliage.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_FoliageLink_Tutorial_1.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_FoliageLink_Tutorial_1.webp"></a></p>
+<p>First of all, create a blank blueprint, which you will use as the foliage link blueprint.  </p>
+<p>You&nbsp;<strong>MUST</strong>&nbsp;ensure that the word&nbsp;<strong>“link”</strong>&nbsp;is included in the name, as this is required for our C++ code to recognize this blueprint as a foliage link blueprint.  </p>
+<p>We called this blueprint&nbsp;<strong>BP_BalloonLinkExample</strong>&nbsp;because we intend to link it to our pre-existing balloon foliage type.</p>
+<p>Open up the blueprint.<br>
+Click on&nbsp;<strong>Class Settings</strong>.<br>
+Under&nbsp;<strong>Interfaces</strong>, add a new interface.<br>
+Search for&nbsp;<strong>EDFoliageLink</strong>&nbsp;and click it.  </p>
+<p>Adding this interface gives the blueprint access to all the required functions that are used by foliage link blueprints.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_FoliageLink_Tutorial_2.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_FoliageLink_Tutorial_2.webp"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_FoliageLink_Tutorial_GetFoliageTypes.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_FoliageLink_Tutorial_GetFoliageTypes.webp"></a></p>
+<p>In order to link this blueprint to your chosen foliage types, expand the Interfaces panel.<br>
+Double click on&nbsp;<strong>Get Foliage Types</strong>.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_FoliageLink_Tutorial_MakeArray.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_FoliageLink_Tutorial_MakeArray.webp"></a></p>
+<p>It will open up the function. From the&nbsp;<strong>Foliage Types</strong>&nbsp;input node, drag it out and click&nbsp;<strong>Make Array</strong>.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_FoliageLink_Tutorial_SetArray.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_FoliageLink_Tutorial_SetArray.webp"></a></p>
+<p>This array is the list of Foliage Meshes that the link will automatically pair to at the start of the game.<br>
+For the purposes of this demonstration, we will link it to the&nbsp;<strong>Balloon Standard</strong>&nbsp;foliage type.</p>
+<p>In theory, this blueprint should now automatically spawn in the same positions as all Balloon Standard meshes that have been painted by the foliage tool.  </p>
+<p>However, since nothing is in the blueprint, it will be invisible.<br>
+So create a sphere inside this blueprint for testing purposes, so that you can see whether it links.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_FoliageLink_Tutorial_Sphere.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_FoliageLink_Tutorial_Sphere.webp"></a></p>
+<p>If you compile and save the blueprint, and then paint&nbsp;<strong>SM_Balloon_Standard</strong>&nbsp;across your level, you should now see the blueprint with its sphere spawn on each instance of the foliage type.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_FoliageLink_Tutorial_SphereSpawned.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_FoliageLink_Tutorial_SphereSpawned.webp"></a></p>
+<hr>
+<h1 id="precision-placement">Precision Placement</h1>
+<p>When designing Foliage Link Blueprints, you will likely need a visual representation of where each component will spawn, relative to the foliage mesh it’s spawning with.<br>
+But you also dont want that mesh spawning in the world! To account for this, we designed a node called&nbsp;<strong>“Switch on World Type”.</strong><br>
+This node allows different functions to occur based on whether you are in editor, playing the game, and many other play-types.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_FoliageLink_Tutorial_PrecisionPlacement-1024x427.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_FoliageLink_Tutorial_PrecisionPlacement-1024x427.webp"></a></p>
+<p>Open up the Contruction Script, and create the&nbsp;<strong>Switch on World Type</strong>&nbsp;node.  </p>
+<p>Create an “<strong>Add Static Mesh Component</strong>” and select your foliage mesh (<strong>SM_Balloon_Standard</strong>).  </p>
+<p>Connect this function to the “<strong>Editor Preview</strong>” so that it only spawns in the editor and not the game.</p>
+<p>Now you can move and scale the sphere to be above the balloon.<br>
+These functions help provide a visual guide so you can design particle effects and sounds with precision placement!</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_FoliageLink_Tutorial_SpherePrecision.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_FoliageLink_Tutorial_SpherePrecision.webp"></a></p>
+<hr>
+<h1 id="sending-data-from-the-foliage-link-blueprint">Sending Data from the Foliage Link Blueprint</h1>
+<p>The foliage link system allows for two-way communication of data between the foliage link blueprint and the foliage blueprint.<br>
+Before we try this out, we first need to create the data structure which will contain the information we want to send.  </p>
+<p>Right click the content browser and click&nbsp;<strong>Blueprints &gt; Structure</strong>.<br>
+Name it “<strong>ST_BalloonData</strong>“</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_FoliageLink_Tutorial_Structure1.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_FoliageLink_Tutorial_Structure1.webp"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_FoliageLink_Tutorial_Structure3.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_FoliageLink_Tutorial_Structure3.webp"></a></p>
+<p>Here you should create all the types of data that you want communicated between the foliage link blueprint and the foliage blueprint.</p>
+<p>For this example, we’ll just create a&nbsp;<strong>Linear Color</strong>&nbsp;data type, named “<strong>Color”</strong>.</p>
+<p>With this step complete, open up&nbsp;<strong>BP_BalloonLinkExample</strong>.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_FoliageLink_Communication_SendData.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_FoliageLink_Communication_SendData.webp"></a></p>
+<p>Now we will use the function that sends data to the Foliage Blueprint.<br>
+In the Event Graph, right click an empty space and add the&nbsp;<strong>Send Data to Blueprint</strong>&nbsp;node.  </p>
+<p>From this node, drag out&nbsp;<strong>Any Struct</strong>&nbsp;and&nbsp;<strong>make</strong>&nbsp;your Data Structure (just search for the name of the structure we created earlier)</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_FoliageLink_Communication_SendData2.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_FoliageLink_Communication_SendData2.webp"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_FoliageLink_Communication_SendData_Color2.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_FoliageLink_Communication_SendData_Color2.webp"></a></p>
+<p>Here you can edit the values of what data you want to send to your Foliage Blueprint.<br>
+In this example, we will set it to yellow.</p>
+<p><em>(Remember to make the Alpha value 1 so it isnt transparent)</em></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_FoliageLink_Communication_OnConvToBP.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_FoliageLink_Communication_OnConvToBP.webp"></a></p>
+<p>The node that sends the data is complete. Now we need to ensure that this data is only transferred when we want it to.</p>
+<p>Under&nbsp;<strong>Interfaces</strong>&nbsp;there are many events that you can use to call the sending of data.<br>
+You aren’t limited to only transferring data from one of these events. You can design it any way you like.  </p>
+<p>But for this example, we will send the data when the foliage instance converts to a blueprint.</p>
+<p>To do this, double click on&nbsp;<strong>On Converting to Blueprint</strong>&nbsp;to create the event.</p>
+<p>Connect our&nbsp;<strong>Send Data</strong>&nbsp;function to the event, so that it fires the moment our Foliage Instance is interacted with and becomes a blueprint.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_FoliageLink_Communication_SendDataEvent.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_FoliageLink_Communication_SendDataEvent.webp"></a></p>
+<hr>
+<h1 id="receiving-the-foliage-link-data">Receiving the Foliage Link Data</h1>
+<p>We need the Foliage Blueprint to now receive the data that was sent.  </p>
+<p>Open up the Balloon that the&nbsp;<em>Foliage Link Blueprint</em>&nbsp;is linked to.<br>
+Navigating to&nbsp;<strong>Plugins / Etherion Foliage Plugin – Pro Content / ExampleContent / FoliageTypes / Balloon</strong>.  </p>
+<p>Open&nbsp;<strong>BP_Balloon_Standard</strong>.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_FoliageLink_Tutorial_BalloonLoc.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_FoliageLink_Tutorial_BalloonLoc.webp"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_FoliageLink_ReceiveData_Node.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_FoliageLink_ReceiveData_Node.webp"></a></p>
+<p>In the Event Graph, add the following two nodes:</p>
+<ul>
+<li><strong>On Received Link Data</strong></li>
+<li><strong>Get Link Data</strong></li>
+</ul>
+<p>Connect them like so,<br>
+and break the&nbsp;<strong>ST_BalloonData</strong>&nbsp;structure.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_FoliageLink_ReceiveData_NodesConnected-1024x443.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_FoliageLink_ReceiveData_NodesConnected-1024x443.webp"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_FoliageLink_ReceiveData_TestNodes-1024x357.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_FoliageLink_ReceiveData_TestNodes-1024x357.webp"></a></p>
+<p>Now create a print string and connect the ST_BalloonData&nbsp;<strong>Color</strong>&nbsp;to the&nbsp;<strong>Text Color</strong>.</p>
+<p>Now when you play the game, you can confirm that the data is being sent from the&nbsp;<strong>Foliage Link Blueprint</strong>&nbsp;to the&nbsp;<strong>Foliage Blueprint</strong>&nbsp;when you interact with the foliage!<br>
+The text color should be yellow&nbsp;<strong>because it was set to be yellow in the</strong>&nbsp;<strong>Foliage Link Blueprint!</strong></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_FoliageLink_ReceiveData_WorkingPrintString.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_FoliageLink_ReceiveData_WorkingPrintString.webp"></a></p>
+<hr>
+<h1 id="example-blueprints">Example Blueprints</h1>
+<p>For some additional example blueprints, navigate to&nbsp;<strong>Plugins / Etherion Foliage Plugin – Pro Content / ExampleContent / FoliageTypes / FoliageLinkExample</strong>.</p>
+<p>These examples include sending and receiving, along with interactions and destruction.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_FoliageLink_Example_3Blueprints-1024x493.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_FoliageLink_Example_3Blueprints-1024x493.webp"></a></p>
+<hr>
+<h1 id="checklist">Checklist</h1>
+<ul>
+<li>The Foliage Link Blueprint is the blueprint which contains ambient effects that are always linked to the Foliage Blueprint.</li>
+<li>The Foliage Link Blueprint must have “<strong>link</strong>” in its name.</li>
+<li>The Foliage Link Blueprint must have the&nbsp;<strong>EDFoliageLink</strong>&nbsp;blueprint interface applied in its class settings.</li>
+<li>The Foliage Link Blueprint is applied to the selected foliage types, set in the&nbsp;<strong>Get Foliage Types</strong>&nbsp;event (taken from the blueprint interface).</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascript/extra.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

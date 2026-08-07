@@ -159,7 +159,7 @@ This helps reduce memory usage without affecting gameplay.
 
 To disable the **Soft Limit** set it to `0` in the poolable actor’s details panel.
 
-#### Hard Limit
+#### Hard Limit {#basics-hard-limit}
 
 The hard limit is the maximum number of actors the system can pool.  
 Once this limit is reached, no new actors will be spawned by the system, and it will a return null/invalid actor on acquire, signaling that it cannot provide a new actor.  

@@ -1,4 +1,4 @@
-# Object Pooling
+# Object Pooling {#advanced-object-pooling}
 # Overview
 
 Object Pooling is a system that reuses objects instead of constantly spawning and destroying them when the game needs those objects.  

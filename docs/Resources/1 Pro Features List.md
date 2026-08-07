@@ -175,7 +175,7 @@ We developed a simple tool that allows you to instead place a static mesh, which
   </iframe>
 </div>
 
-### Grouped Foliage Placement
+### Grouped Foliage Placement {#pro-grouped-foliage-placement}
 
 Static meshes are often grouped together in blueprints to make level design easier. We applied the same method to foliages, so you can now place them inside any blueprint as a static mesh, and have them be converted into foliage instances at the start of the game. **[Click here to learn more.][grouped-foliage-placement]**
 <div style="aspect-ratio:16/9; position:relative; width:100%;">
@@ -253,13 +253,13 @@ We’ve included a custom weather system that currently supports rain, hail, and
 - Automatically **increases the water level** of **BP_RisingWater** based on rain heaviness
 - Provides **numerous hail controls**, including chance of hail, and rain heaviness threshold before hailing
 
-### 2D Background Lightning
+### 2D Background Lightning {#pro-2d-background-lightning}
 
 To craft immersive stormy atmospheres, our 2D Background Lightning feature simulates distant flashes across your sky.  
 It’s managed through a Blueprint, giving you straightforward control over the flash color, intensity, how it illuminates the sky and clouds during a flash, its duration, and the timing between strikes. This allows you to easily set the mood, from occasional flickers to intense, frequent storms in the distance.  
 **[Click here for documentation.][2d-background-lightning]**
 
-### 3D Foreground Lightning
+### 3D Foreground Lightning {#pro-3d-foreground-lightning}
 
 Spice up your level with some 3D Foreground lightning! This lightning blueprint will strike at designated targetpoints or random locations within your navmesh, causing sparks and leaving a hit decal that fades over time. This system has tones of customizable settings, including brightness, damage settings, auto-height detection, and more.  
 **[Click here for documentation.][3d-foreground-lightning]**
