@@ -4,7 +4,7 @@ In this page, we will summarize each of these advanced features and explain how 
 
 ---
 
-## Hit [PRO]
+## Hit - PRO
 
 Foliage Influencers can trigger a **OnPlantHit** event when they come into contact with a Foliage Blueprint.  
 This **OnPlantHit** event makes it easier to apply damage, trigger physics forces, or activate custom functions in your foliage, enabling unique reactions or behaviors.  

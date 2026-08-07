@@ -1,4 +1,4 @@
-# Destructible Foliages - PRO
+# Destructible Foliage - PRO
 ## Overview
 
 We get it. You want to blast those leaves harder than your parent’s blood pressure when you said you wanted to be a “game developer”.  

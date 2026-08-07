@@ -218,7 +218,7 @@ However, once you’ve finished reading, feel free to return to this page to see
 
 **[[Advanced Features/3 Tweener Component - PRO|Tweener Component Documentation]]**
 
-## Basic Material Example [PRO]
+## Basic Material Example - PRO
 
 ![](../assets/Documentation_BPAdvanced_MaterialFX.webp)
 
@@ -261,7 +261,7 @@ Finally, the **Event Initialize** node must reset the **Dynamic Material** t
 
 ---
 
-## Material Hit Example [PRO]
+## Material Hit Example - PRO
 
 ![](../assets/Documentation_BPAdvanced_MaterialFX_BeamAlienPlant.webp)
 

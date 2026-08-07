@@ -1,4 +1,4 @@
-# Grass & Landscape Effects - PRO
+# Grass & Trail Effects - PRO
 If you have the Pro Version, you’ll notice one of the coolest features is the ability to leave grass and mud trails behind your player or any object.  
 If you want to add these effects to your own foliage, landscapes, and characters, this guide is for you!
 

@@ -112,7 +112,7 @@ Go to the **Details Panel**, and uncheck **“Play Sound Effect”**.
 
 ![](../assets/Documentation_BPBasics_Sound_Disable-1024x582.webp)
 
-#### Scaling sound based on Size [PRO]
+#### Scaling sound based on Size - PRO
 
 ![](../assets/Documentation_BPBasics_Sound_ScaleCreate.webp)
 

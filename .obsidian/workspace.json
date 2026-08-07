@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/index.md",
+                "file": "docs/Foliage Physics/1 Installation.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "index"
+              "title": "1 Installation"
             }
           }
         ]
@@ -187,9 +187,31 @@
   },
   "active": "c0231c3e8d979020",
   "lastOpenFiles": [
+    "docs/assets/Pasted image 20260807101157.png",
+    "docs/assets/Pasted image 20260807101153.png",
+    "docs/Resources/Support Guide.md",
+    "docs/Resources/3 FAB – Environment Installation.md",
+    "docs/Resources/2 Lite Features List.md",
+    "docs/Resources/1 Pro Features List.md",
+    "docs/Foliage Physics/2 System Setup.md",
+    "docs/Foliage Physics/4 Licensing.md",
+    "docs/Foliage Physics/3 Foliage Painting & PCG Settings.md",
+    "docs/Foliage Physics/1 Installation.md",
+    "docs/Environment Features/6 Rising Water Blueprint - PRO.md",
+    "docs/Environment Features/5 Water & Fluid Simulation - PRO.md",
+    "docs/Environment Features/4 Grass & Landscape Effects - PRO.md",
+    "docs/Environment Features/3 Lightning & P.O.M Shadows - PRO.md",
+    "docs/Environment Features/2 Weather System - PRO.md",
+    "docs/Environment Features/1 Wind System.md",
+    "docs/Creating Custom Foliage/6 Foliage Link System - PRO.md",
+    "docs/Creating Custom Foliage/5 Destructible Foliages - PRO.md",
+    "docs/Creating Custom Foliage/4 Foliage Influencer – Advanced.md",
+    "docs/Creating Custom Foliage/3 Foliage Blueprint – Advanced.md",
+    "docs/Creating Custom Foliage/2 Foliage Blueprint – Basics.md",
+    "docs/Advanced Features/1 Saving and Loading Foliages - PRO.md",
+    "docs/index.md",
     "docs/javascript/pro-glow.js",
     "docs/javascript/New Text Document.txt",
-    "docs/Creating Custom Foliage/2 Foliage Blueprint – Basics.md",
     "docs/New Text Document.txt",
     "site/assets/javascripts/glightbox.min.js",
     "site/assets/stylesheets/glightbox.min.css",
@@ -198,7 +220,6 @@
     "site/Resources/Support Guide/index.html",
     "site/Resources/Support Guide",
     "site/Resources/3 FAB – Environment Installation/index.html",
-    "site/Resources/3 FAB – Environment Installation",
     "site/assets/images/favicon.png",
     "site/assets/logoicon.svg",
     "site/assets/WaterPlugin-1024x476.jpg",
@@ -208,30 +229,9 @@
     "site/assets/EtherionFoliagePlugin_Pro_Feature_AutoMaterialVariation.webp",
     "site/assets/EditPlugins.webp",
     "site/assets/EditPlugins-1.webp",
-    "site/assets/Documentation_Wind_WaterLevel.webp",
     "docs/Advanced Features/5 Object Pooling.md",
-    "docs/Resources/1 Pro Features List.md",
-    "docs/Creating Custom Foliage/3 Foliage Blueprint – Advanced.md",
-    "docs/Environment Features/3 Lightning & P.O.M Shadows - PRO.md",
     "docs/3 Advanced Features/5 Object Pooling.md",
-    "docs/Resources/2 Lite Features List.md",
-    "docs/Resources/Support Guide.md",
-    "docs/Resources/3 FAB – Environment Installation.md",
-    "docs/Environment Features/5 Water & Fluid Simulation - PRO.md",
-    "docs/Environment Features/4 Grass & Landscape Effects - PRO.md",
-    "docs/Environment Features/6 Rising Water Blueprint - PRO.md",
-    "docs/Environment Features/2 Weather System - PRO.md",
-    "docs/Environment Features/1 Wind System.md",
     "docs/Advanced Features/4 Footstep Sound Effects.md",
-    "docs/Advanced Features/3 Tweener Component - PRO.md",
-    "docs/Advanced Features/2 BONUS Foliage Tools - PRO.md",
-    "docs/Advanced Features/1 Saving and Loading Foliages - PRO.md",
-    "docs/Creating Custom Foliage/5 Destructible Foliages - PRO.md",
-    "docs/Creating Custom Foliage/6 Foliage Link System - PRO.md",
-    "docs/Creating Custom Foliage/4 Foliage Influencer – Advanced.md",
-    "docs/Creating Custom Foliage/1 Preparing the Assets.md",
-    "docs/Foliage Physics/4 Licensing.md",
-    "docs/Foliage Physics/2 System Setup.md",
-    "docs/Foliage Physics/3 Foliage Painting & PCG Settings.md"
+    "docs/Advanced Features/3 Tweener Component - PRO.md"
   ]
 }

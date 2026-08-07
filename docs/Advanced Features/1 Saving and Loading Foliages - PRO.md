@@ -1,4 +1,4 @@
-# Saving and Loading Foliages - PRO
+# Saving and Loading - PRO
 Saving and Loading foliages is almost a requirement for all games, so long as your gameplay involves saving.
 
 To implement saving and loading, you will need to ensure that your level has **BP_FoliageSaveManager** in it.

@@ -51,8 +51,8 @@ Here you will find a range of variables. Hover your mouse over any of them to pr
 
 - **Minimum Wind Intensity**
 - **Maximum Wind Intensity**
-- **Minimum Wind Intensity Raining** [PRO]
-- **Maximum Wind Intensity Raining** [PRO]
+- **Minimum Wind Intensity Raining** - PRO
+- **Maximum Wind Intensity Raining** - PRO
 
 - The minimum wind intensity while not raining
 - The maximum wind intensity while not raining
@@ -63,8 +63,8 @@ Here you will find a range of variables. Hover your mouse over any of them to pr
 
 - **Minimum Wind Intensity**
 - **Maximum Wind Intensity**
-- **Minimum Wind Speed Raining** [PRO]
-- **Maximum Wind Speed Raining** [PRO]
+- **Minimum Wind Speed Raining** - PRO
+- **Maximum Wind Speed Raining** - PRO
 
 - The minimum wind speed while not raining
 - The maximum wind speed while not raining
