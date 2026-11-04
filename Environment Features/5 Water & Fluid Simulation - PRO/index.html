@@ -1,0 +1,1521 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../4%20Grass%20%26%20Landscape%20Effects%20-%20PRO/">
+      
+      
+        <link rel="next" href="../6%20Rising%20Water%20Blueprint%20-%20PRO/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+    
+    
+      
+        <title>Water &amp; Fluid Simulation - PRO - Etherion Foliage Plugin Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="green" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#water-fluid-simulation-pro" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Etherion Foliage Plugin Documentation" class="md-header__button md-logo" aria-label="Etherion Foliage Plugin Documentation" data-md-component="logo">
+      
+  <img src="../../assets/logoicon.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Etherion Foliage Plugin Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Water &amp; Fluid Simulation - PRO
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix="">
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Etherion Foliage Plugin Documentation" class="md-nav__button md-logo" aria-label="Etherion Foliage Plugin Documentation" data-md-component="logo">
+      
+  <img src="../../assets/logoicon.svg" alt="logo">
+
+    </a>
+    Etherion Foliage Plugin Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix="">
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2">
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Foliage Physics
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Foliage Physics
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Foliage%20Physics/1%20Installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Foliage%20Physics/2%20System%20Setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Foliage%20Physics/3%20Foliage%20Painting%20%26%20PCG%20Settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Foliage Painting &amp; PCG Settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Foliage%20Physics/4%20Licensing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Licensing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3">
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Creating Custom Foliage
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Creating Custom Foliage
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Creating%20Custom%20Foliage/1%20Preparing%20the%20Assets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Preparing your Assets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Creating%20Custom%20Foliage/2%20Foliage%20Blueprint%20%E2%80%93%20Basics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Foliage Blueprint – Basics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Creating%20Custom%20Foliage/3%20Foliage%20Blueprint%20%E2%80%93%20Advanced/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Foliage Blueprint – Advanced
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Creating%20Custom%20Foliage/4%20Foliage%20Influencer%20%E2%80%93%20Advanced/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Foliage Influencer – Advanced
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Creating%20Custom%20Foliage/5%20Destructible%20Foliages%20-%20PRO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Destructible Foliage - PRO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Creating%20Custom%20Foliage/6%20Foliage%20Link%20System%20-%20PRO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Foliage Link System - PRO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4">
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced Features
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Advanced Features
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Advanced%20Features/1%20Saving%20and%20Loading%20Foliages%20-%20PRO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Saving and Loading - PRO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Advanced%20Features/2%20BONUS%20Foliage%20Tools%20-%20PRO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BONUS Foliage Tools - PRO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Advanced%20Features/3%20Tweener%20Component%20-%20PRO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tweener Component - PRO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Advanced%20Features/4%20Footstep%20Sound%20Effects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Footstep Sound Effects
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Advanced%20Features/5%20Object%20Pooling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Object Pooling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked="">
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Environment Features
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Environment Features
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1%20Wind%20System/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wind System
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2%20Weather%20System%20-%20PRO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Weather System - PRO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3%20Lightning%20%26%20P.O.M%20Shadows%20-%20PRO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2D Background Lightning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4%20Grass%20%26%20Landscape%20Effects%20-%20PRO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Grass &amp; Trail Effects - PRO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Water &amp; Fluid Simulation - PRO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6%20Rising%20Water%20Blueprint%20-%20PRO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rising Water Blueprint - PRO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6">
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Resources
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Resources/1%20Pro%20Features%20List/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pro Features List
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Resources/2%20Lite%20Features%20List/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lite Features List
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Resources/3%20FAB%20%E2%80%93%20Environment%20Installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAB – Environment Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Resources/Support%20Guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Support Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="water-fluid-simulation-pro">Water &amp; Fluid Simulation - PRO</h1>
+<p>The environment that comes with our plugin, and many others on our store, all use Unreal Engine’s native&nbsp;<strong>Water Plugin</strong>.<br>
+In this tutorial, I will teach you how to get Unreal’s Waterbody Plugin set up with your custom environment, and how to implement the Etherion Designs assets into the waterbody.</p>
+<hr>
+<h1 id="water-setup">Water Setup</h1>
+<p>First, make sure the&nbsp;<strong>Water Plugin</strong>&nbsp;is activated.<br>
+Open your&nbsp;<strong>Plugins</strong>&nbsp;directory (Edit &gt; Plugins), and search for “<strong>Water</strong>“.<br>
+Check that the&nbsp;<strong>Water</strong>&nbsp;plugin is ticked. Restart the engine when it asks you to do so.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/EditPlugins.webp" data-desc-position="bottom"><img alt="" src="../../assets/EditPlugins.webp"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_Prerequisites_WaterPlugin-1024x596.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_Prerequisites_WaterPlugin-1024x596.webp"></a></p>
+<p>Next, add a waterbody to your level.<br>
+You can find more information about the waterbody types from the&nbsp;<strong><a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/water-body-actors-in-unreal-engine">official Unreal Engine Waterbody documentation</a></strong>.</p>
+<hr>
+<h2 id="moving-the-waterbody-important">Moving the Waterbody [Important]</h2>
+<p>If you plan on using Fluid Simulation with your waterbody, please note that it will not work unless your waterbody has its Z-Height set to a value of 0. If you have already designed your level with a waterbody in it, you will have to move the location of your entire level for the purpose of getting fluid simulation working.</p>
+<p>There are two methods of doing this. The first is to create a reference plane at 0 height, and select everything in your level excluding this reference plane. Then, you can manually move everything in your level until your waterbody roughly matches the height of this reference plane. Note that the waterbody does not have to be exactly 0, but can still be around 10 units away from it while still retaining its functionality.</p>
+<p>The second method is more useful if you have thousands of objects in your level with varying heirarchies.<br>
+Naturally, a level this complicated would prove difficult to move manually. So this guide will explain how to do this with relative ease.</p>
+<p>Before continuing with this method, please note that doing this will result in you transplanting all your level actors into a new level, which means your level blueprint will not be copied across with them.</p>
+<p>First, select your waterbody and take note of the exact Z height. In this example, it is&nbsp;<strong>-240</strong>. We recommend pasting it somewhere such as a notepad app to store it for later.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_Water_ZHeight-1024x697.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_Water_ZHeight-1024x697.webp"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_NewEmptyLevel-1024x310.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_NewEmptyLevel-1024x310.webp"></a></p>
+<p>Create an empty level.</p>
+<p>Then use the Levels tab to add the level you want to adjust the Z height of.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_AddLevel-1024x418.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_AddLevel-1024x418.webp"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_SummonLevelDetails.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_SummonLevelDetails.webp"></a></p>
+<p>Select your level, then click the&nbsp;<strong>Summon Level Details</strong>&nbsp;button</p>
+<p>Next, use the Z Position box to add the correct value so that the waterbody in your level has a Z height of 0.  </p>
+<p>In this example, our previous waterbody z height was -240, so in order to get 0 we put 240 in this box.  </p>
+<p>Confirm that the height is correct by selecting the waterbody and checking its Z position.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_Water_AdjustLevelHeight-1024x665.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_Water_AdjustLevelHeight-1024x665.webp"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_Water_LevelSelect2.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_Water_LevelSelect2.webp"></a></p>
+<p>In the Levels tab, right click your level and click<br>
+<strong>Select Actors</strong></p>
+<p>Right click&nbsp;<strong>Persistent Level</strong>&nbsp;and click<br>
+<strong>Move Selected Actors to Level</strong>.  </p>
+<p>Click “Yes” to any confirmation warnings.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_Water_MoveActorsToLevel.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_Water_MoveActorsToLevel.webp"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_Water_LevelRemove.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_Water_LevelRemove.webp"></a></p>
+<p>In the Levels tab, right click your original level and click<br>
+<strong>Remove Selected</strong></p>
+<p>Save your level with a new name.<br>
+Afterwards, you may open up the old level and copy over anything from the Level Blueprint that you wish to keep.</p>
+<hr>
+<h2 id="editing-wave-intensity">Editing Wave Intensity</h2>
+<p>You can adjust the wave intensity, by selecting the waterbody and modifying the W<strong>ave Attenuation Water Depth</strong>&nbsp;value.  </p>
+<p>Increase it by a large value to eliminate waves entirely (<em>For example 100000</em>).</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/WaterBody_WaveHeight-1024x692.webp" data-desc-position="bottom"><img alt="" src="../../assets/WaterBody_WaveHeight-1024x692.webp"></a></p>
+<hr>
+<h1 id="FluidSimFix">Fluid Simulation Fix</h1>
+<h2 id="our-solution-to-an-unreal-problem">Our solution to an Unreal problem</h2>
+<p>Unreal’s native fluid simulation is a fantastic tool for adding realism to your levels, but it comes with serious limitations.<br>
+There’s a hard-coded limit of 6 fluid simulation actors per level and 3 per blueprint.<br>
+If you have more than 6 in your level, Unreal will randomly choose which simulations work, leading to unpredictable results.<br>
+<strong>NOT GOOD ENOUGH!</strong></p>
+<p>That’s why we’ve developed an&nbsp;<strong>enhanced version</strong>&nbsp;of Epic’s fluid simulation blueprint just for you!<br>
+Our version dynamically&nbsp;<strong>activates the nearest 6 fluid simulations</strong>&nbsp;during gameplay, while&nbsp;<strong>disabling the rest</strong>.<br>
+This clever solution creates the illusion that more than 6 simulations are active at once.</p>
+<p>Additionally, we’ve improved the way fluid impulses are triggered for explosions.<br>
+Our blueprint&nbsp;<strong>prioritizes impulse-based fluid-simulations</strong>&nbsp;for the split second needed to apply its force.<br>
+Our method works with the default Waterbody Material, and any Etherion Designs waterbody materials.<br>
+Ready to enjoy a more powerful and flexible fluid simulation experience in your Unreal projects? Lets dive right in!</p>
+<h2 id="fluid-sim-level-setup">Fluid Sim Level Setup</h2>
+<p>Before we begin, we need to make sure you can see the necessary actors in the Content Browser.  </p>
+<p>Ensure your content browser’s view options have&nbsp;<strong>Show Engine Content</strong>&nbsp;and&nbsp;<strong>Show Plugin Content</strong>&nbsp;checked.  </p>
+<p>This will make plugin folders visible in the content browser.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_ShowPluginContents-1024x692.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_ShowPluginContents-1024x692.webp"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_FluidSim_PluginsFolder-1024x354.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_FluidSim_PluginsFolder-1024x354.webp"></a></p>
+<p>Next, we want to access the “<strong>Fluid simulation folder</strong>”.  </p>
+<p>Do this by going to the&nbsp;<strong>All</strong>&nbsp;folder, which is is one directory above the&nbsp;<strong>Content</strong>&nbsp;folder.<br>
+You should now be able to see and navigate to:<br>
+<strong>Engine / Plugins / Water Content</strong></p>
+<p>Navigate to this directory:<br>
+<strong>All / Engine / Plugins / Water Content / Fluid Simulation / Blueprints</strong></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_FluidSimBlueprintLocation-1024x367.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_FluidSimBlueprintLocation-1024x367.webp"></a></p>
+<p>Drag&nbsp;<strong>BP_FluidSim_01</strong>&nbsp;into your level.</p>
+<p>With this blueprint selected in the level, go to the&nbsp;<strong>details panel</strong>&nbsp;and ensure that “<strong>Follow Player</strong>” is checked.<br>
+This blueprint acts as a grid for simulating fluid, which is then applied to the Water Material.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_FluidSim_FollowPlayer-1024x732.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_FluidSim_FollowPlayer-1024x732.webp"></a></p>
+<hr>
+<h2 id="fluid-sim-player-object-setup">Fluid Sim Player / Object Setup</h2>
+<p>Next, open&nbsp;<strong>Content / FoliagePhysics / Blueprints / Environment / FluidSimHelper</strong>.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_Water_FluidSim_Location2-1024x379.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_Water_FluidSim_Location2-1024x379.webp"></a></p>
+<p><strong>BP_FluidForce</strong>&nbsp;is the blueprint we designed which applies fluid force to&nbsp;<strong>BP_FluidSim_01</strong>, and therefore creates ripples on the waterbody.<br>
+This blueprint can be attached to any item that you want to create ripples with the waterbody.  </p>
+<p>For example purposes, we’ll nowshow you how to add it to your&nbsp;<strong>Player Blueprint</strong>.</p>
+<p>Open your player blueprint, and drag in&nbsp;<strong>BP_FluidSim_01</strong>, attaching it to your&nbsp;<strong>Capsule Component</strong>&nbsp;or&nbsp;<strong>root actor</strong>.<br>
+With&nbsp;<strong>BP_FluidForce</strong>&nbsp;selected, go to the the details panel and check the “<strong>Show Mesh</strong>” variable to ensure that you can see the fluid mesh.<br>
+Duplicate it to create up to 3 copies, and move them to cover the total area of your player.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_Water_FluidSim_Character-1024x683.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_Water_FluidSim_Character-1024x683.webp"></a></p>
+<p>Adjust the&nbsp;<strong>Radius</strong>&nbsp;variable to scale the size of the fluid mesh.  </p>
+<p>Adjust the&nbsp;<strong>Strength</strong>&nbsp;value to increase or decrease the ripple intensity on your water.</p>
+<p><strong>Destroy After Impulse:</strong><br>
+If this option is checked, the&nbsp;<strong>BP_FluidForce</strong>&nbsp;component will automatically destroy itself when Event_Impulse is called. This is particularly useful for scenarios like explosions. However, it’s less beneficial for characters or physics objects.</p>
+<p><strong>The Maximum Impulse Distance</strong>:<br>
+This is the farthest distance from the camera at which an impulse can be triggered. For instance, if&nbsp;<strong>BP_FluidForce</strong>&nbsp;is more than 6000 units away from the camera, impulses will not be activated. This feature helps optimize performance by preventing impulse events, like explosions, from consuming resources when they occur far from the camera’s view.</p>
+<h2 id="fluid-sim-triggering-impulses">Fluid Sim – Triggering Impulses</h2>
+<p>Fluid Impulses are a great way to add realism to explosions that occur on your water surface.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_Water_FluidSim_EventImpulse-1024x674.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_Water_FluidSim_EventImpulse-1024x674.webp"></a></p>
+<p>To trigger an Impulse, simply call&nbsp;<strong>Event_Impulse</strong>&nbsp;from your&nbsp;<strong>BP_FluidForce</strong>.</p>
+<p>This will prioritize this fluid force above the others, ensuring it is enabled. The fluid force will then animate, moving rapidly downward for a split second before deactivating.</p>
+<p>The effect is none other than a ripple splash!<br>
+And a very performant one at that!</p>
+<hr>
+<h1 id="improving-visuals">Improving Visuals</h1>
+<p>No doubt you’ll want to customize your water, add some stunning glow effects, and eliminate any annoying visual issues.<br>
+This guide is here to help you do just that!</p>
+<h2 id="applying-water-materials">Applying Water Materials</h2>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_WaterMaterials_Loc3-1024x497.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_WaterMaterials_Loc3-1024x497.webp"></a></p>
+<p>If you want to make use of our water materials,<br>
+simply use the Content Browser to navigate to<br>
+<strong>Content / AlienPhysicsWorld / Materials / Water</strong>  </p>
+<p>Here you will find:<br>
+<strong>MI_WaterBody_DemoLevel<br>
+M_WaterBody_Etherion</strong>  </p>
+<p>And inside the “Underwater” Folder, you will find:<br>
+<strong>M_Etherion_Underwater_PP<br>
+MI_Etherion_UnderWater_PP_Demo</strong></p>
+<p>You can use these materials as a template for your own.  </p>
+<p>Duplicate&nbsp;<strong>MI_WaterBody_DemoLevel</strong>&nbsp;&nbsp;and&nbsp;&nbsp;<strong>MI_Etherion_UnderWater_PP_Demo</strong>  </p>
+<p>Move them to your custom folder, and apply them to your waterbody.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_Water_Material_Applicaton-819x1024.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_Water_Material_Applicaton-819x1024.webp"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_Water_EditMaterial-1024x533.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_Water_EditMaterial-1024x533.webp"></a></p>
+<p>You can then edit these new material instances to your liking.</p>
+<hr>
+<h2 id="shoreline-glow-helper">Shoreline Glow Helper</h2>
+<p>If you are using&nbsp;<strong>Grass Trails</strong>&nbsp;or&nbsp;<strong>Landscape Trails</strong>, you’d need to disable distance fields on your landscape in order for those effects to function correctly.<br>
+Because of this, the water material wont be detecting any distance fields from the landscape, and wont display any glowing edges around the shoreline.<br>
+To get these glowing edges to appear, we created a blueprint tool called&nbsp;<strong>BP_DistanceFieldSpline</strong>.<br>
+<strong>BP_DistanceFieldSpline</strong>&nbsp;procedurally generates cylinders along your custom spline path, which will cast distance fields without being visible to the player.</p>
+<p>To use this tool, navigate to&nbsp;<strong>Content / AlienPhysicsWorld / Blueprints / Water</strong><br>
+Drag&nbsp;<strong>BP_DistanceFieldSpline</strong>&nbsp;into your level, and start using the spline tools to trace around the edges of your landscape where it meets the water.<br>
+You can adjust the spacing and scale of the cylinder in the details panel.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_Water_DistanceFieldSpline-1024x530.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_Water_DistanceFieldSpline-1024x530.webp"></a></p>
+<hr>
+<h2 id="WaterPixellation">Fixing Blocky Water Glow Issue</h2>
+<p>When Unreal engine upgraded form 4.27 to 5.0, they downgraded the appearance of their distance fields. They now look very pixelated and blocky, which affects the look of our water’s material edge glow.  This issue is noted on the Epic Games&nbsp;<strong><a href="https://issues.unrealengine.com/issue/UE-150397">Official Bug List</a></strong>, and has yet to be fixed.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_BlockyDistanceFields-1024x512.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_BlockyDistanceFields-1024x512.webp"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_Water_DistanceFieldFixer2-1024x759.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_Water_DistanceFieldFixer2-1024x759.webp"></a></p>
+<p>We developed a fix for this issue.<br>
+Navigate to&nbsp;<strong>Content / AlienPhysicsWorld / Blueprints / Water</strong><br>
+Drag in&nbsp;<strong>BP_DistanceFieldFixer</strong>&nbsp;to your level.  </p>
+<p>When you play your game, this blueprint will run some console commands which will smooth out distance fields and correct the issue.  </p>
+<p>If you wish to undo this fix, simply delete&nbsp;<strong>BP_DistanceFieldFixer</strong>&nbsp;from your level and&nbsp;<strong>restart</strong>&nbsp;your project.  </p>
+<p><em>Note: We have not thoroughly tested the performane impact of this on lower-end machines.</em></p>
+<hr>
+<h2 id="water-material-guide">Water Material Guide</h2>
+<p>Feeling overwhelmed by the endless list of variables for your water material? This guide is for you.<br>
+Please read below for a comprehensive explanation for each material variable and what it does.</p>
+<h3 id="waterbody-material">WaterBody Material</h3>
+<ul>
+<li><strong>Water Roughness</strong>&nbsp;– The roughness value of the water surface.</li>
+<li><strong>Detail Normal Settings</strong>&nbsp;– This catagory of variables allows you to adjust the wave intensity, speed, size, etc..</li>
+<li><strong>Absorption</strong>&nbsp;– defines how easily light penetrates the volume of water. Pay attention to the alpha value!</li>
+<li><strong>Scattering</strong>&nbsp;– The amount of scattering affects how light travels through the medium, and that directly impacts the way things look when an object is within its volume. Pay attention to the alpha value!</li>
+<li><strong>Rain ON?</strong>&nbsp;– This allows the&nbsp;<strong><a href="../2%20Weather%20System%20-%20PRO/" title="Weather Blueprint">Weather Blueprint</a></strong>&nbsp;to fade in and out raindrops depending on whether it is raining. Disabling this for levels that do not contain rain will reduce shader complexity and improve performance slightly.</li>
+<li><strong>Water Edge Glow – ON?</strong>&nbsp;– Enables distance field glow for the water surface.</li>
+<li><strong>Absorption EdgeGlow</strong>&nbsp;– The amount of Absorption to multiply for the edge of the water.</li>
+<li><strong>Absorption Power</strong>&nbsp;– Extends or shortens the edge mask for the Absorption EdgeGlow</li>
+<li><strong>Water Edge Glow – Glow Intensity</strong>&nbsp;– How bright the edge glow will be.</li>
+<li><strong>Water Edge Glow – Glow Distance</strong>&nbsp;– How far the edge glow will stretch out from the shore.</li>
+<li><strong>Water Edge Glow – Overlay Intensity</strong>&nbsp;– adjusts the intensity of a color overlay that is applied to the water edge glow.</li>
+<li><strong>Water Edge Glow – Overlay Color</strong>&nbsp;– Customize the color of the overlay that is applied to the water edge glow.</li>
+<li><strong>Water Edge Glow – Power 1</strong>&nbsp;– Affects the contrast of the Edge Glow Mask.</li>
+<li><strong>Water Edge Glow – Power 2</strong>&nbsp;– Affects the contrast of the Edge Glow Mask.</li>
+<li><strong>Water Edge Glow – Ambient Light – Distance</strong>&nbsp;– This distance blends between the Edgeglow that has Noise applied to it, and the edge glow that does not have noise applied to it.</li>
+<li><strong>Water Edge Glow – Ambient Light – Intensity 1</strong>– Adds an ambient light to the edge glow that is not affected by noise.</li>
+<li><strong>Water Edge Glow – Ambient Light – Power 1</strong>– Adjusts the contrast / distance of the&nbsp;<strong>Ambient Light Intensity 1</strong>.</li>
+<li><strong>Water Edge Glow – Ambient Light – Intensity 2</strong>– Adds an ambient light to the edge glow that is not affected by noise.</li>
+<li><strong>Water Edge Glow – Ambient Light – Power 2</strong>– Adjusts the contrast / distance of the&nbsp;<strong>Ambient Light Intensity 2</strong>.</li>
+<li><strong>Water Edge Glow – Add – Intensity</strong>– This value adds an overall glow to the entire waterbody.</li>
+<li><strong>Water Edge Glow – Add – Color</strong>– This color is the glow that is applied to the entire waterbody.<br>
+    It is multiplied by&nbsp;<strong><em>Water Edge Glow – Add – Intensity</em></strong>.</li>
+<li><strong>Ripples – Glow Intensity</strong>&nbsp;– The intensity of glow caused by Fluid Simulated actors&nbsp;<em>(like the player)</em>.</li>
+<li><strong>Ripples – Glow Intensity</strong>&nbsp;<strong>Min</strong>&nbsp;– This is the amount of glow that is not affected by noise, caused by Fluid Simulated Actors.</li>
+<li><strong>Ripples – Glow Color</strong>&nbsp;– The color of the ripples caused by Fluid Simulated Actors.</li>
+<li><strong>Water Edge – Fixing White Issue – Intensity</strong>&nbsp;– This value adds glow to the overalpping distance fields. If set to 1, it will be white.</li>
+<li><strong>Water Edge – Fixing White Issue – Power</strong>&nbsp;– This affects the power of the glow applied to overlapping distance fields.</li>
+</ul>
+<h3 id="water-postprocess-material">Water Postprocess Material</h3>
+<ul>
+<li><strong>Fog</strong>&nbsp;– The thickness of underwater fog.</li>
+<li><strong>Absorption</strong>&nbsp;– defines how easily light penetrates the volume of water. Pay attention to the alpha value!</li>
+<li><strong>Band Color</strong>&nbsp;– Changes the color of the waterline that the camera sees when passing from above water to underwater.</li>
+<li><strong>Fog Ambient Color</strong>&nbsp;– The Color of the Fog in unlit dark areas</li>
+<li><strong>Fog Scatter Color</strong>&nbsp;– The Color of the Fog when light shines through it</li>
+</ul>
+<hr>
+<h1 id="grass-trails-compatibility">Grass Trails Compatibility</h1>
+<p>The Grass Trails system that we have designed utilises a postprocess layer called&nbsp;<strong>Scene Capture</strong>.<br>
+Unfortunately, Unreal Engine’s underwater post-process materials override the&nbsp;<strong>Scene Capture</strong>, disabling the grass trails!<br>
+To view how to fix this, please navigate to the&nbsp;Grass Trails documentation page:</p>
+<p><strong><a class="autorefs autorefs-internal" title="Water Plugin Compatibility" href="../4%20Grass%20%26%20Landscape%20Effects%20-%20PRO/#water-plugin-compatibility">Grass Trails Compatibility</a></strong></p>
+<hr>
+<h1 id="packaging-with-unreal-55-issue-solution">Packaging with Unreal 5.5 (Issue Solution)</h1>
+<p>Unreal 5.5 is quite new, and so it has a lot of undocumented issues.<br>
+If you are using a waterbody, and it is not appearing in your packaged game, try the following:</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_Water_Packaging55-1024x754.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_Water_Packaging55-1024x754.webp"></a></p>
+<ol>
+<li>Open your level and select the waterbody</li>
+<li>Toggle the “Use Curve Channel” checkbox.</li>
+<li>Save the level.</li>
+<li>Toggle the “Use Curve Channel” checkbox back to its original state.</li>
+<li>Save the level.</li>
+</ol>
+<p>Doing this for each level will reset the waterbody, and help fix the packaging issues. Good luck!</p>
+<hr>
+<h1 id="3rd-party-links-related-content">3rd Party Links &amp; Related Content</h1>
+<p><a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/water-system-in-unreal-engine">Unreal Engine Water Documentation</a></p>
+<p><a href="https://youtube.com/playlist?list=PL8_QdDwbYqgR-ku_oUo_99D9UwZ0xiuyK&amp;si=_MuaJ4fhhlQMtqlm">WaterBody Video Tutorial Series by NumenBrothers</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
+      
+        <script src="../../javascript/extra.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

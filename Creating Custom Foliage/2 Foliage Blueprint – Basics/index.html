@@ -1,0 +1,1441 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../1%20Preparing%20the%20Assets/">
+      
+      
+        <link rel="next" href="../3%20Foliage%20Blueprint%20%E2%80%93%20Advanced/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+    
+    
+      
+        <title>Foliage Blueprint – Basics - Etherion Foliage Plugin Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="green" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#foliage-blueprint-basics" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Etherion Foliage Plugin Documentation" class="md-header__button md-logo" aria-label="Etherion Foliage Plugin Documentation" data-md-component="logo">
+      
+  <img src="../../assets/logoicon.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Etherion Foliage Plugin Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Foliage Blueprint – Basics
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix="">
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Etherion Foliage Plugin Documentation" class="md-nav__button md-logo" aria-label="Etherion Foliage Plugin Documentation" data-md-component="logo">
+      
+  <img src="../../assets/logoicon.svg" alt="logo">
+
+    </a>
+    Etherion Foliage Plugin Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix="">
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2">
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Foliage Physics
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Foliage Physics
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Foliage%20Physics/1%20Installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Foliage%20Physics/2%20System%20Setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Foliage%20Physics/3%20Foliage%20Painting%20%26%20PCG%20Settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Foliage Painting &amp; PCG Settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Foliage%20Physics/4%20Licensing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Licensing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked="">
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Creating Custom Foliage
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Creating Custom Foliage
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1%20Preparing%20the%20Assets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Preparing your Assets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Foliage Blueprint – Basics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3%20Foliage%20Blueprint%20%E2%80%93%20Advanced/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Foliage Blueprint – Advanced
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4%20Foliage%20Influencer%20%E2%80%93%20Advanced/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Foliage Influencer – Advanced
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5%20Destructible%20Foliages%20-%20PRO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Destructible Foliage - PRO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6%20Foliage%20Link%20System%20-%20PRO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Foliage Link System - PRO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4">
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced Features
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Advanced Features
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Advanced%20Features/1%20Saving%20and%20Loading%20Foliages%20-%20PRO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Saving and Loading - PRO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Advanced%20Features/2%20BONUS%20Foliage%20Tools%20-%20PRO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BONUS Foliage Tools - PRO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Advanced%20Features/3%20Tweener%20Component%20-%20PRO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tweener Component - PRO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Advanced%20Features/4%20Footstep%20Sound%20Effects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Footstep Sound Effects
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Advanced%20Features/5%20Object%20Pooling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Object Pooling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5">
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Environment Features
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Environment Features
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Environment%20Features/1%20Wind%20System/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wind System
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Environment%20Features/2%20Weather%20System%20-%20PRO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Weather System - PRO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Environment%20Features/3%20Lightning%20%26%20P.O.M%20Shadows%20-%20PRO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2D Background Lightning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Environment%20Features/4%20Grass%20%26%20Landscape%20Effects%20-%20PRO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Grass &amp; Trail Effects - PRO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Environment%20Features/5%20Water%20%26%20Fluid%20Simulation%20-%20PRO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Water &amp; Fluid Simulation - PRO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Environment%20Features/6%20Rising%20Water%20Blueprint%20-%20PRO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rising Water Blueprint - PRO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6">
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Resources
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Resources/1%20Pro%20Features%20List/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pro Features List
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Resources/2%20Lite%20Features%20List/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lite Features List
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Resources/3%20FAB%20%E2%80%93%20Environment%20Installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAB – Environment Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Resources/Support%20Guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Support Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="foliage-blueprint-basics">Foliage Blueprint – Basics</h1>
+<p>All foliages require a Foliage Blueprint in order to interact with the player.<br>
+This asset will contain the physics-simulated Skeletal Mesh, and other programmed features that allow the foliage to interact with its environment.<br>
+This page contains a guide on how to create a basic Foliage Blueprint, and apply your custom foliage to it.  </p>
+<p>If you have purchased one of our Alien or Fantasy Environments, you’ll automatically get access to the Pro Version of our physics system.<br>
+This includes an upgraded version of the Parent blueprint, which comes with many additional features that we will also cover in this tutorial.</p>
+<h1 id="blueprint-creation">Blueprint Creation</h1>
+<h2 id="creating-your-child-blueprint"><strong>Creating your Child Blueprint</strong></h2>
+<p>All Foliage Blueprints must be a child of “<strong>BP_FoliageParent</strong>”.<br>
+To create a child of this blueprint, navigate to&nbsp;<strong>Content / AlienPhysicsWorld / FoliageSystem</strong></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_BPBasics_CreateChild-1024x614.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_BPBasics_CreateChild-1024x614.webp"></a></p>
+<p>Right click&nbsp;<strong>BP_FoliageParent</strong>, and click “<strong>Create Child Blueprint Class</strong>”.  </p>
+<p>Rename this Blueprint with “<strong>BP_</strong>” as its prefix, then complete its name to reflect the&nbsp;<strong>Static Mesh</strong>&nbsp;and&nbsp;<strong>Skeletal Mesh</strong>&nbsp;of the plant species it represents&nbsp;<em>(<strong>BP_FoliageName</strong>)</em>.  </p>
+<p>We then recommend moving this new Child Blueprint into the same folder as your custom foliage assets to make the next steps easier.</p>
+<h2 id="adding-custom-assets-to-the-child-blueprint"><strong>Adding Custom Assets to the Child Blueprint</strong></h2>
+<p>Open the Child Blueprint you just created.<br>
+Inside, you’ll se a number of components.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_BPBasics_StaticMesh-1024x601.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_BPBasics_StaticMesh-1024x601.webp"></a></p>
+<p>Select the “<strong>Foliage Static Mesh</strong>” component.<br>
+In the&nbsp;<strong>Details Panel</strong>, set your custom static mesh in the “<strong>Static Mesh</strong>” reference slot.</p>
+<p>Select the “<strong>Foliage Skeletal Mesh</strong>” component.<br>
+In the&nbsp;<strong>Details Panel</strong>, set your&nbsp;<strong>Custom Skeletal Mesh</strong>&nbsp;in the “<strong>Skeletal Mesh</strong>” reference slot.  </p>
+<p>Once your&nbsp;<strong>Skeletal Mesh</strong>&nbsp;is applied, the&nbsp;<strong>Physics Asset</strong>&nbsp;will automatically be linked to the foliage.  </p>
+<p>You do not need to pay attention to the Animation field.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_BPBasics_SkeletalMesh-1024x601.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_BPBasics_SkeletalMesh-1024x601.webp"></a></p>
+<h1 id="capsules-physics-scaling"><strong>Capsules</strong>&nbsp;&amp; Physics Scaling</h1>
+<p>Our system includes features for physics-based scaling of your foliage, as well as foliage detection.<br>
+In our Child Blueprint, you’ll find two capsules: the&nbsp;<strong>PlantTouch Capsule</strong>&nbsp;and the&nbsp;<strong>AntiKnockover Capsule</strong>.</p>
+<h3 id="plant-touch-capsule"><strong>Plant Touch Capsule</strong></h3>
+<p>This capsule is used for simple collisions, such as triggering a sound or basic functions within the blueprint.<br>
+By default, it plays a sound effect when touched. You should adjust the position and size of the PlantTouch Capsule to fit your plant.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_BPBasics_PlantTouchCapsule.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_BPBasics_PlantTouchCapsule.webp"></a></p>
+<h3 id="anti-knock-over-capsule"><strong>Anti Knock Over Capsule</strong></h3>
+<p>Unfortunately Unreal Engine’s physics system is not top of the range when compared to other game engines like Source 2.<br>
+As such, it can be very unreliable when trying to create resistance when player pawns interact with foliage.<br>
+Using a foliages Physics Asset to create resistance will often cause the player mesh to freak out and fly to the other side of your level.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_BPBasics_AntiKnockover.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_BPBasics_AntiKnockover.webp"></a></p>
+<p>To simulate realistic resistance without encountering the typical issues you’d find with physics assets,<br>
+use the&nbsp;<strong>Anti Knock Over Capsule</strong>.  </p>
+<p>When activated, it prevents the player from passing through large plants, like a tree.</p>
+<p>To set it up, begin by scaling the capsule to be thinner than your foliage,<br>
+and position it inside the trunk of your plant.  </p>
+<p>Remember, this is the object that will block the player!</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_BPBasics_AntiKnockover_Position2.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_BPBasics_AntiKnockover_Position2.webp"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_BPBasics_AntiKnockover_Variable.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_BPBasics_AntiKnockover_Variable.webp"></a></p>
+<p>Then, select the&nbsp;<strong>Class Component</strong>&nbsp;<strong>(Self)</strong>&nbsp;and look to the&nbsp;<strong>Details Panel</strong>.  </p>
+<p>Under&nbsp;<strong>Foliage Blueprint Parent</strong>, find the&nbsp;<strong>“Size Before Anti Knock Over Activation”</strong>&nbsp;variable and adjust its value.  </p>
+<p>If the foliage’s size in world units is smaller than this value, the capsule won’t activate.<br>
+if it’s larger, the capsule will collide and&nbsp;<strong>block all.</strong>  </p>
+<p>If you don’t need this feature, set the value to a very large number&nbsp;<em>(e.g., 9999999 units)</em>.</p>
+<h3 id="disabling-physics-based-on-size">Disabling Physics based on Size</h3>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_BPBasics_AntiKnockover_Variable.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_BPBasics_AntiKnockover_Variable.webp"></a></p>
+<p>For very large plants, you may want to disable physics interactions entirely.  </p>
+<p>The blueprint can automatically disable physics if the plant’s radius exceeds a certain threshold, controlled by the&nbsp;<strong>“Size Before Disabling Physics”</strong>&nbsp;variable.  </p>
+<p>If you don’t want this feature, simply set the value to a very large number<br>
+<em>(e.g., 9999999 units)</em>.</p>
+<hr>
+<h2 id="sound">Sound</h2>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_BPBasics_Sound_Properties-1024x669.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_BPBasics_Sound_Properties-1024x669.webp"></a></p>
+<h4 id="sound-effect"><strong>Sound Effect</strong></h4>
+<p>To customize your foliage sound effect, select the&nbsp;<strong>Sound Effect</strong>&nbsp;component and change the sound in the&nbsp;<strong>Details Panel</strong>.  </p>
+<p>You can also adjust the&nbsp;<strong>volume</strong>,&nbsp;<strong>attenuation</strong>&nbsp;and other properties from the details panel.</p>
+<p>If you don’t want any sound, select the&nbsp;<strong>Class Component</strong>&nbsp;<em>(the very top of the hierarchy labelled “Self”)</em>.  </p>
+<p>Go to the&nbsp;<strong>Details Panel</strong>, and uncheck&nbsp;<strong>“Play Sound Effect”</strong>.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_BPBasics_Sound_Disable-1024x582.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_BPBasics_Sound_Disable-1024x582.webp"></a></p>
+<h4 id="scaling-sound-based-on-size-pro">Scaling sound based on Size - PRO</h4>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_BPBasics_Sound_ScaleCreate.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_BPBasics_Sound_ScaleCreate.webp"></a></p>
+<p>You can automatically adjust a sound’s volume and pitch based on the size of the foliage, or disable sound entirely if the foliage is too large for physics interactions.  </p>
+<p>In your Foliage Blueprint, right-click and search for the node called&nbsp;<strong>“Scale Foliage Sound Effect”</strong>&nbsp;(not to be confused with&nbsp;<strong>“Event Scale Foliage Sound Effect”</strong>).</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_BPBasics_Sound_Scale.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_BPBasics_Sound_Scale.webp"></a></p>
+<p>Plug this newly created node into&nbsp;<strong>Event Initialize</strong>&nbsp;and set its variables to fit your needs.  </p>
+<p><strong>Minimum Size</strong>&nbsp;and&nbsp;<strong>Maximum Size</strong>&nbsp;<em>(measured in world units)</em>&nbsp;define the scale limits for adjusting&nbsp;<strong>pitch</strong>&nbsp;and&nbsp;<strong>volume</strong>. These caps ensure that pitch and volume changes stop when the foliage reaches the specified size range.</p>
+<p>The “<strong>DIsable Sound If Too Large For Physics</strong>” checkbox determines whether a sound should play if a plant exceeds the scale set by the&nbsp;<strong>Size before Disabling Physics</strong>&nbsp;variable.</p>
+<hr>
+<h2 id="before-you-continue">Before You Continue!</h2>
+<p>Select your&nbsp;<strong>Class Component (Self)</strong>&nbsp;and go to the&nbsp;<strong>Details Panel</strong>.  </p>
+<p>All of the settings for the rest of this page will be found under<br>
+<strong>Foliage Blueprint Parent</strong>&nbsp;in the&nbsp;<strong>Details Panel</strong>.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_BPBasics_DetailsPanel.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_BPBasics_DetailsPanel.webp"></a></p>
+<hr>
+<h2 id="object-pooling">Object Pooling</h2>
+<p><strong>Object Pooling</strong>&nbsp;is a system that reuses objects rather than constantly spawning and destroying them, improving performance by reducing memory allocations.<br>
+Without it, frequent spawning and destroying can hurt game performance, especially with many dynamic objects such as&nbsp;<strong>Foliage Blueprints!</strong></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_BPBasics_ObjectPooling2.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_BPBasics_ObjectPooling2.webp"></a></p>
+<p>The&nbsp;<strong>Pro Version</strong>&nbsp;of our Foliage Blueprint uses object pooling to enhance performance.<br>
+The&nbsp;<strong>BP_FoliageParent</strong>&nbsp;class, which all Foliage Blueprints are based on, includes two object pooling variables you may need to adjust:</p>
+<h4 id="soft-limit">Soft Limit</h4>
+<p>The soft limit is the target number of objects in the pool. If more objects are needed, the pool can create them, but it will try to return to this limit over time.<br>
+When the soft limit is exceeded, unused actors are destroyed gradually, one by one, across frames to avoid performance issues.<br>
+This helps reduce memory usage without affecting gameplay.</p>
+<p>To disable the&nbsp;<strong>Soft Limit</strong>&nbsp;set it to&nbsp;<code>0</code>&nbsp;in the poolable actor’s details panel.</p>
+<h4 id="basics-hard-limit">Hard Limit</h4>
+<p>The hard limit is the maximum number of actors the system can pool.<br>
+Once this limit is reached, no new actors will be spawned by the system, and it will a return null/invalid actor on acquire, signaling that it cannot provide a new actor.<br>
+This strict enforcement ensures that the pool does not grow beyond the allocated memory capacity, protecting the system from runaway resource consumption.</p>
+<p>To disable the&nbsp;<strong>Hard Limit</strong>&nbsp;set it to&nbsp;<code>0</code>&nbsp;in the poolable actor’s details panel. (<strong>Warning:</strong>&nbsp;this can cause huge performance drops)</p>
+<hr>
+<h2 id="timing-parameters">Timing Parameters</h2>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_BPBasics_Timing.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_BPBasics_Timing.webp"></a></p>
+<p>These two parameters control how your foliage deactivates its physics when interacting with Foliage Influencers and Bullet Projectiles.  </p>
+<p>For reference, the “<strong>rest pose</strong>” we will be talking about here, refers to the static state of the foliage before it is physically moved.</p>
+<h4 id="hit-conversion-delay"><strong>Hit Conversion Delay</strong></h4>
+<p>When foliage is hit by a projectile, it physically reacts and gets pushed. For rapid-fire weapons, a slight delay before resetting the foliage to its&nbsp;<strong>rest pose</strong>&nbsp;is better for performance.<br>
+This value determines the delay (<em>in seconds</em>) before the foliage begins returning to its rest pose, allowing for animations or effects to play naturally.<br>
+<em><strong>Tip: Adjust this value to control the responsiveness when foliage is hit by rapid-fire weapons.</strong></em></p>
+<h4 id="back-to-rest-pose-blending-duration"><strong>Back to Rest Pose Blending Duration</strong></h4>
+<p>This value controls how many seconds it takes for the foliage to smoothly blend back into its&nbsp;<strong>rest pose</strong>&nbsp;after being pushed. The longer the duration, the smoother the transition.</p>
+<hr>
+<h2 id="pro-influencer-detection-settings">PRO Influencer Detection Settings</h2>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_BPBasics_InfluencerDetection.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_BPBasics_InfluencerDetection.webp"></a></p>
+<p>Our&nbsp;<strong>Foliage Influencer</strong>&nbsp;will detect foliage instances painted using the foliage tool by sensing their bounding box.  </p>
+<p>However, once a foliage instance is converted to a foliage blueprint, the detection method can be adjusted.  </p>
+<p>You can set the&nbsp;<strong>Influencer Detection Method</strong>&nbsp;to either&nbsp;<strong>Box</strong>&nbsp;or&nbsp;<strong>Individual Bones</strong>.<br>
+If you choose&nbsp;<strong>Individual Bones</strong>, the&nbsp;<strong>Smallest Bone Radius</strong>&nbsp;value sets a size limit, preventing detection of bones smaller than this radius.  </p>
+<p>To preview these detection methods, enable the&nbsp;<strong>Debug Influencer Detection</strong>&nbsp;and&nbsp;<strong>Debug Smallest Bone Radius</strong>&nbsp;checkboxes.</p>
+<hr>
+<h2 id="other-settings"><strong>Other Settings</strong></h2>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_BPBasics_AffectDistanceField2.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_BPBasics_AffectDistanceField2.webp"></a></p>
+<h4 id="affect-distance-field"><strong>Affect Distance Field</strong></h4>
+<p>When enabled, the foliage static mesh will contribute to distance field lighting, regardless of whether it is visible. This is useful if your plant is in glowing water that utilises distance fields to create the glow effect.  </p>
+<p><em>Note: Set this property to false in order to optimize performance when distance field effects are not needed.</em></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_BPBasics_HitImpulseRootBone.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_BPBasics_HitImpulseRootBone.webp"></a></p>
+<h4 id="hit-impulse-root-bone"><strong>Hit Impulse Root Bone</strong></h4>
+<p>This variable would hold the name of the specific bone in a skeletal mesh that, when hit, propagates an impulse to itself and all its child bones in the hierarchy.  </p>
+<p>For example, if you choose the middle bone, only the middle bone and all the bones that come sequentially after it will receive the impulse.<br>
+All bones before it in the hierarchy will not receive the impulse.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_BPBasics_HitImpulseRootBone-1.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_BPBasics_HitImpulseRootBone-1.webp"></a></p>
+<h4 id="physics-alpha"><strong>Physics Alpha</strong></h4>
+<p>This float value controls the blending factor for physics simulation.<br>
+A value of 0 means no physics simulation, while a value of 1 means full physics simulation is applied.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
+      
+        <script src="../../javascript/extra.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>
