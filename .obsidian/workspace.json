@@ -96,7 +96,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/1  Foliage Physics/3 Foliage Painting & PCG Settings.md",
+                "file": "docs/Foliage Physics/1 Installation.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -106,7 +106,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for 3 Foliage Painting & PCG Settings"
+              "title": "Backlinks"
             }
           },
           {
@@ -171,8 +171,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -185,7 +184,7 @@
       "bases:Create new base": false
     }
   },
-  "active": "c0231c3e8d979020",
+  "active": "8e6d138d277bc190",
   "lastOpenFiles": [
     "docs/assets/favicon.ico",
     "docs/assets/Etherion Designs Icon 64.ico",
