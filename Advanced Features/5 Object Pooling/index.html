@@ -1,0 +1,1460 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../4%20Footstep%20Sound%20Effects/">
+      
+      
+        <link rel="next" href="../../Environment%20Features/1%20Wind%20System/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
+    
+    
+      
+        <title>Object Pooling - Etherion Foliage Plugin Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="green" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#advanced-object-pooling" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Etherion Foliage Plugin Documentation" class="md-header__button md-logo" aria-label="Etherion Foliage Plugin Documentation" data-md-component="logo">
+      
+  <img src="../../assets/logoicon.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Etherion Foliage Plugin Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Object Pooling
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix="">
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Etherion Foliage Plugin Documentation" class="md-nav__button md-logo" aria-label="Etherion Foliage Plugin Documentation" data-md-component="logo">
+      
+  <img src="../../assets/logoicon.svg" alt="logo">
+
+    </a>
+    Etherion Foliage Plugin Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix="">
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2">
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Foliage Physics
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Foliage Physics
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Foliage%20Physics/1%20Installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Foliage%20Physics/2%20System%20Setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Foliage%20Physics/3%20Foliage%20Painting%20%26%20PCG%20Settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Foliage Painting &amp; PCG Settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Foliage%20Physics/4%20Licensing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Licensing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3">
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Creating Custom Foliage
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Creating Custom Foliage
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Creating%20Custom%20Foliage/1%20Preparing%20the%20Assets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Preparing your Assets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Creating%20Custom%20Foliage/2%20Foliage%20Blueprint%20%E2%80%93%20Basics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Foliage Blueprint – Basics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Creating%20Custom%20Foliage/3%20Foliage%20Blueprint%20%E2%80%93%20Advanced/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Foliage Blueprint – Advanced
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Creating%20Custom%20Foliage/4%20Foliage%20Influencer%20%E2%80%93%20Advanced/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Foliage Influencer – Advanced
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Creating%20Custom%20Foliage/5%20Destructible%20Foliages%20-%20PRO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Destructible Foliage - PRO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Creating%20Custom%20Foliage/6%20Foliage%20Link%20System%20-%20PRO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Foliage Link System - PRO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked="">
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced Features
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Advanced Features
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1%20Saving%20and%20Loading%20Foliages%20-%20PRO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Saving and Loading - PRO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2%20BONUS%20Foliage%20Tools%20-%20PRO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BONUS Foliage Tools - PRO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3%20Tweener%20Component%20-%20PRO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tweener Component - PRO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4%20Footstep%20Sound%20Effects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Footstep Sound Effects
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Object Pooling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5">
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Environment Features
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Environment Features
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Environment%20Features/1%20Wind%20System/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wind System
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Environment%20Features/2%20Weather%20System%20-%20PRO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Weather System - PRO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Environment%20Features/3%20Lightning%20%26%20P.O.M%20Shadows%20-%20PRO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2D Background Lightning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Environment%20Features/4%20Grass%20%26%20Landscape%20Effects%20-%20PRO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Grass &amp; Trail Effects - PRO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Environment%20Features/5%20Water%20%26%20Fluid%20Simulation%20-%20PRO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Water &amp; Fluid Simulation - PRO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Environment%20Features/6%20Rising%20Water%20Blueprint%20-%20PRO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rising Water Blueprint - PRO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6">
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Resources
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Resources/1%20Pro%20Features%20List/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pro Features List
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Resources/2%20Lite%20Features%20List/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lite Features List
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Resources/3%20FAB%20%E2%80%93%20Environment%20Installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAB – Environment Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Resources/Support%20Guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Support Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="advanced-object-pooling">Object Pooling</h1>
+<h1 id="overview">Overview</h1>
+<p>Object Pooling is a system that reuses objects instead of constantly spawning and destroying them when the game needs those objects.<br>
+It maintains a pool of reaty-to-use assets by borrowng and returning them from a memory ‘pool’ as the game requires them.  </p>
+<p>Without object pooling, games encounter bad performance from frequent allocations and deallocations – especially when it comes to large numbers of dynamic objects appearing and dissapearing on-screen.</p>
+<p>Examples of this might be rapid-fire weapons projectiles, explosions or particle effects, and… you guessed it… dynamic foliage!</p>
+<p>Our object pooling system, called&nbsp;<strong>ED Object Pooling</strong>, is a lightweight, flexible object pooling framework that can optimize performance for a large variety of actors.<br>
+It utilises a soft cap to keep an optimal number of objects in the pool, and a hard cap to prevent resource overuse.</p>
+<p>This page will walk through the entire process, step by step, explaining how to work with Poolable Actors and what happens internally in the Object Pooling System when acquiring and returning poolable actors. We will cover the pooling system’s logic and how components/child actors, soft limits, and hard limits come into play.</p>
+<p><em>Note: This system is a&nbsp;<strong>Pro only</strong>&nbsp;feature.<br>
+In the&nbsp;<strong>Lite</strong>&nbsp;version it will just create a new object each time user acquires an actor and destroys it when returned to the pool.<br>
+Only the&nbsp;<strong><a class="autorefs autorefs-internal" title="Hard Limit" href="#hard-limit">hard limit</a></strong>&nbsp;applies in the&nbsp;<strong>Lite</strong>&nbsp;version.</em></p>
+<h2 id="key-components">Key Components</h2>
+<ul>
+<li><strong>AEDPoolableActor</strong>: The base class for all poolable actors in the system. It handles the initialization and uninitialization logic.</li>
+<li><strong>IEDPoolableChild</strong>: An interface for poolable child components or actors, ensuring they follow the same initialization and uninitialization procedures as their parent actor.</li>
+<li><strong>UEDObjectPoolingStatics</strong>: A set of utility functions available to interact with the pooling system in Blueprints or C++.</li>
+</ul>
+<hr>
+<h1 id="creating-a-poolable-actor">Creating a Poolable Actor</h1>
+<h2 id="create-a-blueprint-class">Create a Blueprint Class</h2>
+<p>In Unreal Engine, go to&nbsp;<strong>Content Browser</strong>&nbsp;&gt; Right-click &gt;&nbsp;<strong>Blueprint Class</strong>.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://etheriondesigns.com/wp-content/uploads/2025/10/Documentation_ObjectPooling_CreateBlueprint-1.webp" data-desc-position="bottom"><img alt="" src="https://etheriondesigns.com/wp-content/uploads/2025/10/Documentation_ObjectPooling_CreateBlueprint-1.webp"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_ObjectPooling_CreatePooledBP.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_ObjectPooling_CreatePooledBP.webp"></a></p>
+<p>Select&nbsp;<strong>EDPoolableActor</strong>&nbsp;as the parent class.</p>
+<p>Open the newly created actor and configure the&nbsp;limit values&nbsp;in the&nbsp;<strong>Class Defaults</strong>&nbsp;section</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_ObjectPooling_ClassLimits.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_ObjectPooling_ClassLimits.webp"></a></p>
+<h4 id="soft-limit">Soft Limit</h4>
+<p>The soft limit is the target number of objects in the pool.<br>
+If more objects are needed, the pool can create them, but it will try to return to this limit over time.<br>
+When the soft limit is exceeded, unused actors are destroyed gradually, one by one, across frames to avoid performance issues.<br>
+This helps reduce memory usage without affecting gameplay.  </p>
+<p>Think of the soft limit like hosting a party.<br>
+If you expect a steady flow of guests, you keep extra chairs around so people aren’t left standing (a higher soft limit).<br>
+But if it’s a smaller gathering of less people, you only keep a few extras nearby, knowing you can gradually remove them if the crowd thins out (a lower soft limit).</p>
+<p>To disable the&nbsp;<strong>Soft Limit</strong>, set it to&nbsp;<code>0</code>&nbsp;in the poolable actor’s details panel.</p>
+<h4 id="hard-limit">Hard Limit</h4>
+<p>The hard limit is the maximum number of actors the system can pool, similar to setting a firm cap on how many guests can attend your party.<br>
+Once this limit is reached, no new actors will be spawned by the system, and it will a return null/invalid actor on acquire, signaling that it cannot provide a new actor.<br>
+This strict enforcement ensures that the pool does not grow beyond the allocated memory capacity, protecting the system from runaway resource consumption.  </p>
+<p>The key is finding a balance where you’re not overwhelming the system but also avoiding unnecessary limits on how many objects can be spawned.</p>
+<p>To disable the&nbsp;<strong>Hard Limit</strong>&nbsp;set it to&nbsp;<code>0</code>&nbsp;in the poolable actor’s details panel. (<strong>Warning:</strong>&nbsp;this can cause huge performance drops)</p>
+<h2 id="initialization-logic">Initialization Logic</h2>
+<p>In the Object Pooling System, proper initialization is key to making sure that actors (or objects) work well when they are reused multiple times.</p>
+<p>The&nbsp;<strong>EDPoolableActor</strong>&nbsp;class includes events that help make sure an actor is ready to use when it’s taken from the pool and properly reset when it’s returned. This prevents issues like old data (such as position, state, or animations) from sticking around and causing bugs.<br>
+<em>(These events are also implemented for&nbsp;<strong>EDPoolableChild</strong>&nbsp;for components or child actors.)</em></p>
+<p>If you’re using foliage actors, they handle this initialization process for you. However, if you add custom features or use object pooling for something else, you might need to add your own logic. To do that, you can use these events and add your code.</p>
+<p>In object pooling, the&nbsp;<strong>BeginPlay</strong>&nbsp;event is only called once when the actor is first created. If you need initialization to happen every time the actor is reused, move that logic to the&nbsp;<strong>Initialize</strong>&nbsp;event. For cleanup, instead of using&nbsp;<strong>Destroyed</strong>, use the&nbsp;<strong>UnInitialize</strong>&nbsp;event, which is called every time the actor is returned to the pool.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_BPAdvanced_ObjectPooling_Initialize.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_BPAdvanced_ObjectPooling_Initialize.webp"></a></p>
+<p>When you get an actor from the pool, you want to make sure it’s in a fresh, default state, with no leftover data or settings from the last time it was used. The&nbsp;<strong>Initialize</strong>&nbsp;event runs each time an actor is taken from the pool, resetting its properties and setting up any components, effects, or particle systems it needs. If you have custom logic in your blueprint, you’ll want to use this node to reset all your variables to their default state.<br>
+<em>(For example, a countdown integer for a landmine should have its timer variable reset here)</em></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_BPAdvanced_ObjectPooling_Uninitialize.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_BPAdvanced_ObjectPooling_Uninitialize.webp"></a></p>
+<p>When an actor is no longer needed and returned to the pool, the&nbsp;<strong>UnInitialize</strong>&nbsp;event is called to help clean it up. This makes sure that no leftover effects, particle systems, or timers remain after the actor is done being used. It essentially “shuts down” the actor, getting it ready for the next time it’s needed.<br>
+If you created custom logic in your blueprint, you’ll want to connect the shutdown processes of that logic to this node.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_BPAdvanced_ObjectPooling_IsInitialized.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_BPAdvanced_ObjectPooling_IsInitialized.webp"></a></p>
+<p>If you need to check whether a poolable actor is currently initialized within your Blueprint logic, use the&nbsp;<strong>Is Initialized</strong>&nbsp;node. This node returns&nbsp;<strong>True</strong>&nbsp;if the&nbsp;<strong>Initialize</strong>&nbsp;event has been called and the&nbsp;<strong>UnInitialize</strong>&nbsp;event hasn’t happened yet, meaning the actor is active and not in the pool. Keep in mind, if you use this node in the&nbsp;<strong>Begin Play</strong>&nbsp;event, it will return&nbsp;<strong>False</strong>&nbsp;because the actor hasn’t been initialized yet at that point.</p>
+<hr>
+<h1 id="child-actor-component-blueprints">Child Actor / Component Blueprints</h1>
+<p>If your Blueprint Actor has&nbsp;<strong>Components</strong>&nbsp;or&nbsp;<strong>Child Actors</strong>, they also need to be reset when the actor is reused. You can handle their reset within the parent actor, but a better way is to implement the&nbsp;<strong>EDPoolableChild</strong>&nbsp;interface on each component or child actor. This lets each child handle its own reset, while staying in sync with the parent actor. This approach makes your code easier to understand and ensures that all child elements are properly reinitialized or cleaned up when the parent is taken from or returned to the pool.</p>
+<p>You can Implement this interface in the&nbsp;<strong>Class Settings</strong>&nbsp;section of your actor / component blueprints.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_ObjectPooling_PoolableChild.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_ObjectPooling_PoolableChild.webp"></a></p>
+<p>When the&nbsp;<strong>Initialize</strong>&nbsp;event is called on the parent actor, all its child actor / component blueprints that implement&nbsp;<strong>EDPoolableChild</strong>&nbsp;will also have their own&nbsp;<strong>Initialize</strong>&nbsp;and&nbsp;<strong>UnInitialize</strong>&nbsp;events called to reset their states.</p>
+<p>You can implement these events in your&nbsp;<strong>Child Actor / Component</strong>&nbsp;blueprints by navigating to the&nbsp;<strong>My Blueprint</strong>&nbsp;tab. Expand the&nbsp;<strong>INTERFACES</strong>&nbsp;foldout and&nbsp;<strong>right-click &gt; Implement Event</strong>&nbsp;to bring the event into the&nbsp;<strong>Event Graph</strong>.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_ObjectPooling_ChildEvents.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_ObjectPooling_ChildEvents.webp"></a></p>
+<hr>
+<h1 id="acquiring-a-poolable-actor">Acquiring a Poolable Actor</h1>
+<p>When the game requests an actor, it is not always created from scratch.<br>
+Instead, the Object Pooling System checks if the requested actor is available in the pool to reuse.<br>
+If there isn’t one available and the pool allows it, the system will create a new one.<br>
+What we mean when we say “<strong>Aquire</strong>” a poolable actor, is to get an actor out of the pool, or create one if there arent any in the pool. Remember this!</p>
+<p>To acquire a poolable actor, use the&nbsp;<strong>Acquire</strong>&nbsp;nodes from the&nbsp;<strong>ObjectPoolingStatics</strong>&nbsp;blueprint function library, as seen below:</p>
+<h3 id="can-acquire-a-poolable">Can Acquire a Poolable</h3>
+<p>You can check if the system can give you a poolable actor by the&nbsp;<strong>Can Acquire Poolable Actor</strong>&nbsp;node. It will return&nbsp;<strong>True</strong>&nbsp;if a poolable actor of the specified&nbsp;<strong>Class</strong>&nbsp;can be acquired and&nbsp;<strong>False</strong>&nbsp;otherwise.</p>
+<p>The class drop down will only include actor classes that inherit from&nbsp;<strong>EDPoolableActor</strong>.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_ObjectPooling_CanAquireNode.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_ObjectPooling_CanAquireNode.webp"></a></p>
+<h3 id="acquire-a-poolable-actor">Acquire a Poolable Actor</h3>
+<p>Use this node to acquire a poolable actor without changing any of its variables.<br>
+If there’s an available actor in the pool, it will call the&nbsp;<strong>Initialize</strong>&nbsp;event and return that actor.</p>
+<p>If no unused actors are available, are available and the limits allow, a new actor will be created. This process runs the&nbsp;<strong>ConstructionScript</strong>&nbsp;and&nbsp;<strong>BeginPlay</strong>&nbsp;before calling&nbsp;<strong>Initialize</strong>&nbsp;to make sure the actor is ready to use. However, if pool limits&nbsp;prevent new actors from being created, a null/invalid object will be returned instead.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_ObjectPooling_AquireNode.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_ObjectPooling_AquireNode.webp"></a></p>
+<h3 id="acquire-with-parameters"><strong>Acquire with Parameters</strong></h3>
+<p>If you use the above-mentioned&nbsp;<strong>Acquire a Poolable Actor</strong>&nbsp;node and then try to set its variables afterwards, it can cause problems.<br>
+That’s because the&nbsp;<strong>Initialize</strong>&nbsp;event is called before the variables can be set, so it won’t get the right values.</p>
+<p>To acquire a poolable actor, but also set its variables before the&nbsp;<strong>Initialize</strong>&nbsp;event is called, use the&nbsp;<strong>Acquire a Poolable Actor And Set Parameters</strong>&nbsp;node instead.  </p>
+<p>If there aren’t any actors in the pool and the system created a new actor, the variables will be set even before the&nbsp;<strong>ConstructionScript</strong>&nbsp;and&nbsp;<strong>BeginPlay</strong>&nbsp;are called, ensuring the poolable actor’s events run with the correct variables.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_ObjectPooling_AquireAndSetParameters.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_ObjectPooling_AquireAndSetParameters.webp"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_ObjectPooling_ExposeOnSpawn2.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_ObjectPooling_ExposeOnSpawn2.webp"></a></p>
+<p>For a variable to show up on the&nbsp;<strong>Acquire a Poolable Actor And Set Parameters</strong>&nbsp;node, you need to make its variable public, by enabling the&nbsp;<strong>Expose on Spawn</strong>&nbsp;flag.</p>
+<p>To do this, select your variable, go to the&nbsp;<strong>Details</strong>&nbsp;panel, and set both&nbsp;<strong>Instance Editable</strong>&nbsp;and&nbsp;<strong>Expose on Spawn</strong>&nbsp;to&nbsp;<strong>True</strong>.</p>
+<p>If you don’t see the variable on the node, it’s because the&nbsp;<strong>Expose on Spawn</strong>&nbsp;flag is set to&nbsp;<strong>False</strong>.</p>
+<h3 id="acquire-deferred"><strong>Acquire Deferred</strong></h3>
+<p>Sometimes, you might need to do extra setup or run specific functions on a poolable actor before its Initialize event runs. Keep in mind that acquiring an actor also triggers the Construction and Begin Play events if the actor is being created from scratch, so this applies to those events too.</p>
+<p>The&nbsp;<strong>Acquire Poolable Actor Deferred</strong>&nbsp;node lets you get an actor without turning it on right away, unlike the&nbsp;<strong>Acquire Poolable Actor And Set Parameters</strong>&nbsp;node. This gives you time to set its variables, make changes, or run special functions before it starts doing anything.</p>
+<p>After you’re done, you must use the&nbsp;<strong>Finish Acquiring Poolable Actor</strong>&nbsp;node to turn it on and let it do its normal actions in the game. If you forget to do this, the actor won’t show up or work properly, and it might not respond when the player interacts with it.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_ObjectPooling_AquireDeferredNode.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_ObjectPooling_AquireDeferredNode.webp"></a></p>
+<hr>
+<h1 id="returning-an-actor-to-the-pool">Returning an Actor to the Pool</h1>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_ObjectPooling_ReturnPoolableActor.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_ObjectPooling_ReturnPoolableActor.webp"></a></p>
+<p>When an actor is done with its job and isn’t needed anymore, it should be returned to the pool instead of being destroyed.<br>
+This helps manage resources better and gets the actor ready to be used again. To do this, use the&nbsp;<strong>Return Poolable Actor</strong>&nbsp;node.<br>
+This triggers the&nbsp;<strong>UnInitialize</strong>&nbsp;event, which resets the actor so it’s ready for the next time it’s needed.</p>
+<p>If you’re working inside the poolable actor itself,<br>
+you can call the&nbsp;<strong>Return Self to Pool</strong>&nbsp;node instead, which performs the same function but simplifies the process by not needing a&nbsp;<strong>self reference</strong>&nbsp;node.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_ObjectPooling_ReturnSelfToPool.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_ObjectPooling_ReturnSelfToPool.webp"></a></p>
+<hr>
+<h1 id="logging-system">Logging System</h1>
+<p>The&nbsp;<code>EDObjectPoolingLogger</code>&nbsp;helps you easily log messages about the object pooling system in Unreal Engine.<br>
+This can be useful for keeping track of when poolable actors are created, acquired, or destroyed.<br>
+To turn logging on or off, press the&nbsp;<strong>~</strong>&nbsp;key to open the console.<br>
+Then, type&nbsp;<strong>“EDObjectPoolingLogger true”</strong>&nbsp;to enable logging or&nbsp;<strong>“EDObjectPoolingLogger false”</strong>&nbsp;to turn it off.</p>
+<hr>
+<h1 id="best-practices">Best Practices</h1>
+<p>This is a great checklist for making sure that your blueprints are following the correct principals!</p>
+<ul>
+<li>
+<p><strong>Avoid Manual Destruction:</strong><br>
+    If you manually destroy an actor (like using Unreal Engine’s normal destroy method), it won’t go back to the pool.<br>
+    The system will have to create a new one next time, which is less efficient. Always use the pool’s return method to avoid creating unnecessary new actors.  </p>
+</li>
+<li>
+<p><strong>Avoid Returning Active Actors:</strong><br>
+    Make sure the actor is no longer being used before returning it to the pool. Returning an actor that’s still active in gameplay can cause problems and unexpected behavior.  </p>
+</li>
+<li>
+<p><strong>Handling Child Components:</strong><br>
+    If the actor has child components or child actors using the&nbsp;<strong>EDPoolableChild</strong>&nbsp;interface, their&nbsp;<strong>UnInitialize</strong>&nbsp;methods will automatically be called when the parent actor returns to the pool. If they don’t use this interface, you’ll need to reset them manually in the parent actor’s&nbsp;<strong>UnInitialize</strong>&nbsp;event. This ensures everything is properly reset and ready for reuse, preventing leftover data or issues.</p>
+</li>
+<li>
+<p><strong>Use Initialization and UnInitialization Properly:</strong><br>
+    Always ensure that initialization logic (resetting properties, states, etc.) is placed in the&nbsp;<strong>Initialize Event</strong>, and cleanup logic is placed in the&nbsp;<strong>UnInitialize Event.</strong>&nbsp;This guarantees that actors will behave as expected each time they are reused from the pool.  </p>
+</li>
+<li>
+<p><strong>Avoid Over-Instantiating Actors:</strong><br>
+    Be mindful of the&nbsp;<strong>soft limits</strong>&nbsp;and&nbsp;<strong>hard limits</strong>&nbsp;you configure for your poolable actors.<br>
+    The soft limit should allow for enough actors to be reused without excessive memory consumption, while the hard limit should ensure that your game does not run out of memory or processing power.  </p>
+</li>
+<li>
+<p><strong>Monitor Performance with Logging:</strong><br>
+    Use the logging system to track actor lifecycles and pool limits, especially during performance-critical moments of your game. This can help you identify areas where your pools may need adjustment or if actors are being created or destroyed too frequently.  </p>
+</li>
+<li>
+<p><strong>Optimize Actor Complexity:</strong><br>
+    If your poolable actors contain complex child components or sub-actors, make sure each child follows the proper initialization and cleanup procedures by implementing the&nbsp;<strong>IEDPoolableChild</strong>&nbsp;interface. This ensures that the entire hierarchy of actors and components is correctly reset, preventing unexpected behavior.  </p>
+</li>
+<li>
+<p><strong>Use Deferred Acquisition for Complex Setup:</strong><br>
+    When an actor requires a detailed setup before initialization (e.g., complex parameters or external references), use the&nbsp;<strong>Acquire Poolable Actor Deferred</strong>&nbsp;node. This ensures you have full control over the actor’s configuration before it is used in the game world.</p>
+</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
+      
+        <script src="../../javascript/extra.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

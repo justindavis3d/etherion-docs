@@ -1,0 +1,1421 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../2%20BONUS%20Foliage%20Tools%20-%20PRO/">
+      
+      
+        <link rel="next" href="../4%20Footstep%20Sound%20Effects/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
+    
+    
+      
+        <title>Tweener Component - PRO - Etherion Foliage Plugin Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="green" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#tweener-component-pro" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Etherion Foliage Plugin Documentation" class="md-header__button md-logo" aria-label="Etherion Foliage Plugin Documentation" data-md-component="logo">
+      
+  <img src="../../assets/logoicon.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Etherion Foliage Plugin Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Tweener Component - PRO
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix="">
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Etherion Foliage Plugin Documentation" class="md-nav__button md-logo" aria-label="Etherion Foliage Plugin Documentation" data-md-component="logo">
+      
+  <img src="../../assets/logoicon.svg" alt="logo">
+
+    </a>
+    Etherion Foliage Plugin Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix="">
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2">
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Foliage Physics
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Foliage Physics
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Foliage%20Physics/1%20Installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Foliage%20Physics/2%20System%20Setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Foliage%20Physics/3%20Foliage%20Painting%20%26%20PCG%20Settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Foliage Painting &amp; PCG Settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Foliage%20Physics/4%20Licensing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Licensing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3">
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Creating Custom Foliage
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Creating Custom Foliage
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Creating%20Custom%20Foliage/1%20Preparing%20the%20Assets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Preparing your Assets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Creating%20Custom%20Foliage/2%20Foliage%20Blueprint%20%E2%80%93%20Basics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Foliage Blueprint – Basics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Creating%20Custom%20Foliage/3%20Foliage%20Blueprint%20%E2%80%93%20Advanced/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Foliage Blueprint – Advanced
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Creating%20Custom%20Foliage/4%20Foliage%20Influencer%20%E2%80%93%20Advanced/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Foliage Influencer – Advanced
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Creating%20Custom%20Foliage/5%20Destructible%20Foliages%20-%20PRO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Destructible Foliage - PRO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Creating%20Custom%20Foliage/6%20Foliage%20Link%20System%20-%20PRO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Foliage Link System - PRO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked="">
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced Features
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Advanced Features
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1%20Saving%20and%20Loading%20Foliages%20-%20PRO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Saving and Loading - PRO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2%20BONUS%20Foliage%20Tools%20-%20PRO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BONUS Foliage Tools - PRO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tweener Component - PRO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4%20Footstep%20Sound%20Effects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Footstep Sound Effects
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5%20Object%20Pooling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Object Pooling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5">
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Environment Features
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Environment Features
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Environment%20Features/1%20Wind%20System/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wind System
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Environment%20Features/2%20Weather%20System%20-%20PRO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Weather System - PRO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Environment%20Features/3%20Lightning%20%26%20P.O.M%20Shadows%20-%20PRO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2D Background Lightning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Environment%20Features/4%20Grass%20%26%20Landscape%20Effects%20-%20PRO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Grass &amp; Trail Effects - PRO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Environment%20Features/5%20Water%20%26%20Fluid%20Simulation%20-%20PRO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Water &amp; Fluid Simulation - PRO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Environment%20Features/6%20Rising%20Water%20Blueprint%20-%20PRO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rising Water Blueprint - PRO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6">
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Resources
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Resources/1%20Pro%20Features%20List/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pro Features List
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Resources/2%20Lite%20Features%20List/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lite Features List
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Resources/3%20FAB%20%E2%80%93%20Environment%20Installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAB – Environment Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Resources/Support%20Guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Support Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="tweener-component-pro">Tweener Component - PRO</h1>
+<h1 id="overview">Overview</h1>
+<p>The&nbsp;<strong>ED Tweener Component</strong>&nbsp;is a versatile Blueprint tool that allows you to create smooth transitions and animations between values.<br>
+It is highly efficient, and provides a wide range of easing types.</p>
+<h2 id="features">Features</h2>
+<h3 id="tweener-type-control-the-flow-of-animation"><strong>Tweener Type – Control the Flow of Animation</strong></h3>
+<p>Define the direction and flow of your animations with four distinct Tweener Types, each suited to different scenarios.<br>
+Choose the type that best fits your animation needs:</p>
+<ul>
+<li><strong>Reversed:</strong>&nbsp;Runs the animation backward, starting from the end value and transitioning to the start value. Ideal for reversing effects, like closing a door that was opened or retracting an object to its original position.</li>
+<li><strong>Ping Pong:</strong>&nbsp;The animation plays forward from the start value to the end value, then reverses back to the start. This back-and-forth motion is great for creating looping effects, like a pendulum swinging or a bouncing ball.</li>
+<li><strong>Ping Pong Reversed:</strong>&nbsp;Begins the animation in reverse, moving from the end value to the start value, and then returns to the end. This is particularly useful when you want to introduce a reverse-first motion.</li>
+<li><strong>Normal:</strong>&nbsp;Plays the animation from the starting value to the ending value in a forward direction. This is perfect for any one-way transition, such as moving an object.</li>
+</ul>
+<h3 id="easing-type-achieve-smooth-and-natural-animations"><strong>Easing Type – Achieve Smooth and Natural Animations</strong></h3>
+<p>The way your animation progresses over time is crucial for achieving a polished, professional look.<br>
+The ED Tweener Component offers an extensive range of Easing Types to control the speed and acceleration of your transitions:</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_Tweener_Visual-1024x605.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_Tweener_Visual-1024x605.webp"></a></p>
+<ul>
+<li><strong>Linear</strong>&nbsp;Provides a steady, constant rate of change throughout the animation. Use this for mechanical, no-frills transitions where even timing is key.</li>
+<li><strong>Quadratic, Cubic, Quartic, and Quintic</strong>&nbsp;These functions offer progressively more dramatic easing effects, from gentle (Quadratic) to stronger accelerations and decelerations (Quintic). You can use these to mimic natural physics, where motion starts slow, speeds up, and then slows again.</li>
+<li><strong>Sinusoidal, Exponential, and Circular</strong>&nbsp;These easing types mimic real-world physics with smooth arcs and curves. Perfect for creating organic, fluid motion such as waves, rotations, or scaling.</li>
+<li><strong>Elastic and Bounce</strong>&nbsp;These playful easing types add a bouncy or elastic feel to animations. Use them for dramatic effects, like a springy UI element or a character jumping and bouncing on the ground.</li>
+<li><strong>Back</strong>&nbsp;Adds a slight backward motion before the animation moves forward. This can be useful for creating anticipation in animations, such as a button pressing inward before popping back out.</li>
+</ul>
+<p>Each easing type defines how the transition speeds up, slows down, or maintains a constant speed over time. You can experiment with various combinations to create animations that feel dynamic, fluid, and perfectly suited to your project’s needs. For a visual reference, you can explore these easing functions at&nbsp;<a href="https://easings.net/">https://easings.net</a>.</p>
+<h3 id="looping-endless-possibilities-for-repetitive-animations"><strong>Looping – Endless Possibilities for Repetitive Animations</strong></h3>
+<p>Enable Looping to repeat the tweener animation continuously. This is particularly useful for creating infinite cycles, such as:</p>
+<ul>
+<li>A rotating object that spins continuously.</li>
+<li>A pulsing light that fades in and out on repeat.</li>
+<li>An object oscillating back and forth, such as a swinging lamp.</li>
+</ul>
+<p>Looping works seamlessly with the various tweener types, giving you full flexibility over how your animations repeat. Combine looping with the Ping Pong tweener type for back-and-forth motion or with Normal for endless forward progression.</p>
+<hr>
+<h1 id="getting-started">Getting Started</h1>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_Tweener_Adding.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_Tweener_Adding.webp"></a></p>
+<p>To add a Tweener component to your blueprint, first open up the blueprint actor that you want to animate. This could be any object like a character, a prop, or even a light.  </p>
+<p>Navigate to the&nbsp;<strong>Components</strong>&nbsp;panel and click on the&nbsp;<strong>Add</strong>&nbsp;button.<br>
+Search for&nbsp;<strong>“EDTweener”</strong>&nbsp;in the list and select it.</p>
+<p>Once added, the ED Tweener Component needs to be configured to define the specifics of your animation. You’ll be working with key properties that control how the Tweener behaves, so let’s break each one down.</p>
+<h2 id="configuring-tweener-properties">Configuring Tweener Properties</h2>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_Tweener_Properties-1024x531.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_Tweener_Properties-1024x531.webp"></a></p>
+<ul>
+<li>
+<p><strong>Start Value &amp; End Value</strong></p>
+</li>
+<li>
+<p>These are the two boundary points of your animation. The Start Value is where the animation begins, and the End Value is where it finishes. These values can represent anything that can be animated numerically, such as position, rotation, scale, color, opacity, or even a custom property you’ve defined. For example if you’re changing the opacity of a material, the values might range from 0 (completely transparent) to 1 (fully visible).</p>
+</li>
+<li>
+<p><strong>Duration</strong></p>
+</li>
+<li>
+<p>Define how long the animation will last, in seconds. A short duration (e.g., 0.5 seconds) will create a fast, snappy animation, while a longer duration (e.g., 5 seconds) will result in a smooth, gradual transition.</p>
+</li>
+<li>
+<p><strong>Easing Type</strong></p>
+</li>
+<li>
+<p>Define how long the animation will last, in seconds. A short duration (e.g., 0.5 seconds) will create a fast, snappy animation, while a longer duration (e.g., 5 seconds) will result in a smooth, gradual transition.</p>
+</li>
+</ul>
+<h2 id="implementing-tweener-events">Implementing Tweener Events</h2>
+<p>The ED Tweener Component provides several useful events that you can hook into to execute specific actions during the animation. These events are critical for triggering other behaviors or for more complex animation chains.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_Tweener_AddingTweenerEvents.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_Tweener_AddingTweenerEvents.webp"></a></p>
+<p>To bind tweener events, right-click on the&nbsp;<strong>EDTweener</strong>&nbsp;component in the Components panel.<br>
+Hover over&nbsp;<strong>Add Event</strong>, and select the event you want.</p>
+<h3 id="begin-event">Begin Event</h3>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_Tweener_BeginEvent.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_Tweener_BeginEvent.webp"></a></p>
+<p>This event is triggered when the tweener starts its animation. It serves as an entry point for initializing any effects or actions that should occur at the beginning of the animation sequence.</p>
+<p>You can use this event to set up any initial state required for the animation, such as modifying materials, activating sound effects, or initializing variables</p>
+<h3 id="tick-event">Tick Event</h3>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_Tweener_TickEvent.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_Tweener_TickEvent.webp"></a></p>
+<p>This event is the heart of the tweener component which is fired every frame during the animation, allowing you to continuously update your animated objects based on the current value of the animation.</p>
+<p>This is where you can implement custom behaviors that depend on the current progress of the animation. For example, you might adjust the opacity of an object or change the speed of a particle effect.</p>
+<h3 id="cycle-complete-event">Cycle Complete Event</h3>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_Tweener_CycleCompleteEvent.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_Tweener_CycleCompleteEvent.webp"></a></p>
+<p>This event is triggered at the completion of each cycle of the animation. If your animation is set to loop or repeat, this event allows you to respond to each completed iteration.</p>
+<h3 id="end-event">End Event</h3>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_Tweener_EndEvent.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_Tweener_EndEvent.webp"></a></p>
+<p>This event is triggered when the tweener has completed its animation, marking the end of the animation sequence. It serves as a clean-up point for any actions or effects you initiated at the beginning.</p>
+<p>Use this event to deactivate or reset any properties or effects that were initiated in the Begin event. This ensures that your game state remains consistent and that resources are released when they are no longer needed.</p>
+<p>This is also an ideal time to trigger any follow-up actions, such as transitioning to a new animation or initiating another sequence in your game.</p>
+<h2 id="starting-the-tweener">Starting the Tweener</h2>
+<p>Before starting, ensure you’ve defined the&nbsp;<strong>Start Value, End Value, Duration, and Easing Type</strong>&nbsp;by selecting the component and checking it’s details panel.<br>
+These parameters dictate how your animation will behave, ensuring you achieve the desired visual effect.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_Tweener_Start.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_Tweener_Start.webp"></a></p>
+<p>Once the ED Tweener Component is set up and events are implemented, you can start the tweener using the&nbsp;<strong>Start</strong>&nbsp;function.<br>
+This function initializes the animation and begins transitioning from&nbsp;<strong>Start Value</strong>&nbsp;to&nbsp;<strong>End Value</strong>&nbsp;according to the specified settings.</p>
+<p>To create this&nbsp;<strong>Start Function</strong>, drag your component into the graph to make a reference to it.  </p>
+<p>Then, drag out from your tweener reference, and search for the&nbsp;<strong>Start</strong>&nbsp;function.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_Tweener_AddingStart-1024x646.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_Tweener_AddingStart-1024x646.webp"></a></p>
+<h2 id="pausing-and-resuming-the-tweener">Pausing and Resuming the Tweener</h2>
+<p>You can pause and resume the animation at any point using the Pause and UnPause functions. This allows you to halt animations mid-flow and continue at will.<br>
+When the tweener is paused, its CurrentValue and ElapsedTime remain unchanged and the Tick event will no longer be called. and when it is unpaused it will continue from where it left off.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_Tweener_PauseUnpause.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_Tweener_PauseUnpause.webp"></a></p>
+<p>Drag your component into the graph to make a reference to it, then drag out from your tweener reference and search for the&nbsp;<strong>“Pause</strong>” or&nbsp;<strong>“UnPause</strong>” functions.</p>
+<h2 id="stopping-the-tweener">Stopping the Tweener</h2>
+<p>The ED Tweener Component provides two functions to stop an ongoing animation These functions allow you to control when and how the tweener should end, either preserving the current state or resetting it back to its initial value.</p>
+<h3 id="stop-node">Stop Node</h3>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_Tweener_Stop.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_Tweener_Stop.webp"></a></p>
+<p>Use this node to halt the animation immediately. This will keep the&nbsp;<strong>CurrentValue</strong>&nbsp;at its present state when stopped and trigger the End event.<br>
+When the&nbsp;<strong>Stop</strong>&nbsp;function is called, the tweener stops updating its value and does&nbsp;<strong>not</strong>&nbsp;revert to the starting state. Use this function if you want to end the animation but retain the current state for further modifications or interactions.</p>
+<h3 id="stop-and-reset-node"><strong>Stop and Reset node</strong></h3>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_Tweener_StopAndReset.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_Tweener_StopAndReset.webp"></a></p>
+<p>Use this node to halt the animation and reset the&nbsp;<strong>CurrentValue</strong>&nbsp;to the initial&nbsp;<strong>StartValue</strong>. This function also triggers the&nbsp;<strong>Tick</strong>&nbsp;event one final time with the&nbsp;<strong>StartValue</strong>, reverting to the starting state, and fires the&nbsp;<strong>End</strong>&nbsp;event afterwards.</p>
+<h2 id="usage-example">Usage Example</h2>
+<p>For a practical example of how to implement and use the ED Tweener Component, check out the&nbsp;<code>**BP_TweenerExample**</code>&nbsp;Blueprint provided in the plugin’s content folder.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_Tweener_Example-1024x545.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_Tweener_Example-1024x545.webp"></a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
+      
+        <script src="../../javascript/extra.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

@@ -1,0 +1,1445 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../2%20Weather%20System%20-%20PRO/">
+      
+      
+        <link rel="next" href="../4%20Grass%20%26%20Landscape%20Effects%20-%20PRO/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
+    
+    
+      
+        <title>2D Background Lightning - Etherion Foliage Plugin Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="green" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#2d-background-lightning" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Etherion Foliage Plugin Documentation" class="md-header__button md-logo" aria-label="Etherion Foliage Plugin Documentation" data-md-component="logo">
+      
+  <img src="../../assets/logoicon.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Etherion Foliage Plugin Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              2D Background Lightning
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix="">
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Etherion Foliage Plugin Documentation" class="md-nav__button md-logo" aria-label="Etherion Foliage Plugin Documentation" data-md-component="logo">
+      
+  <img src="../../assets/logoicon.svg" alt="logo">
+
+    </a>
+    Etherion Foliage Plugin Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix="">
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2">
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Foliage Physics
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Foliage Physics
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Foliage%20Physics/1%20Installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Foliage%20Physics/2%20System%20Setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Foliage%20Physics/3%20Foliage%20Painting%20%26%20PCG%20Settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Foliage Painting &amp; PCG Settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Foliage%20Physics/4%20Licensing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Licensing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3">
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Creating Custom Foliage
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Creating Custom Foliage
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Creating%20Custom%20Foliage/1%20Preparing%20the%20Assets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Preparing your Assets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Creating%20Custom%20Foliage/2%20Foliage%20Blueprint%20%E2%80%93%20Basics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Foliage Blueprint – Basics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Creating%20Custom%20Foliage/3%20Foliage%20Blueprint%20%E2%80%93%20Advanced/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Foliage Blueprint – Advanced
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Creating%20Custom%20Foliage/4%20Foliage%20Influencer%20%E2%80%93%20Advanced/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Foliage Influencer – Advanced
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Creating%20Custom%20Foliage/5%20Destructible%20Foliages%20-%20PRO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Destructible Foliage - PRO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Creating%20Custom%20Foliage/6%20Foliage%20Link%20System%20-%20PRO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Foliage Link System - PRO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4">
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced Features
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Advanced Features
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Advanced%20Features/1%20Saving%20and%20Loading%20Foliages%20-%20PRO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Saving and Loading - PRO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Advanced%20Features/2%20BONUS%20Foliage%20Tools%20-%20PRO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BONUS Foliage Tools - PRO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Advanced%20Features/3%20Tweener%20Component%20-%20PRO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tweener Component - PRO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Advanced%20Features/4%20Footstep%20Sound%20Effects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Footstep Sound Effects
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Advanced%20Features/5%20Object%20Pooling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Object Pooling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked="">
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Environment Features
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Environment Features
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1%20Wind%20System/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wind System
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2%20Weather%20System%20-%20PRO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Weather System - PRO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2D Background Lightning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4%20Grass%20%26%20Landscape%20Effects%20-%20PRO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Grass &amp; Trail Effects - PRO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5%20Water%20%26%20Fluid%20Simulation%20-%20PRO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Water &amp; Fluid Simulation - PRO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6%20Rising%20Water%20Blueprint%20-%20PRO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rising Water Blueprint - PRO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6">
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Resources
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Resources/1%20Pro%20Features%20List/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pro Features List
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Resources/2%20Lite%20Features%20List/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lite Features List
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Resources/3%20FAB%20%E2%80%93%20Environment%20Installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAB – Environment Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Resources/Support%20Guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Support Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="2d-background-lightning">2D Background Lightning</h1>
+<p>Background lightning is a perfect way to add some dynamic ambience to your sky.<br>
+This lightning blueprint will animate lightning on a 2D transparent plane very far off in the distance at random intervals.  </p>
+<p>To add some 2D background lighting to your scene, open&nbsp;<strong>Content / AlienPhysicsWorld / Blueprints / Atmosphere / Lightning</strong><br>
+and drag in&nbsp;<strong>BP_Lightning2D_Background</strong>&nbsp;to your level.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_Weather_2DLightningLoc2-1024x375.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_Weather_2DLightningLoc2-1024x375.webp"></a></p>
+<p>After you add this to your level, select the lightning actor and then go to the details panel.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_Weather_2DLightning_Type-1024x539.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_Weather_2DLightning_Type-1024x539.webp"></a></p>
+<p>You’ll first want to select the&nbsp;<strong>Striking Type</strong>.  </p>
+<p>If you are unsure about what each option does, simply leave your mouse hovered on it, and a popup will tell you.</p>
+<p>Blow this, you will find a range of variables that will help you adjust the timing, color, location, and light intensity of your lightning.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_Weather_2DLightningVariables6.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_Weather_2DLightningVariables6.webp"></a></p>
+<p><strong>Min Wait Time</strong>&nbsp;&amp;&nbsp;<strong>Max Wait Time</strong>&nbsp;set the range for the random delay that occurs before lightning strikes.  </p>
+<p><strong>Directional Light Intensity</strong>&nbsp;controls the intensity of the light that occurs when the lightning flashes. To preview this, tick the&nbsp;<strong>Light Visible in Editor</strong>&nbsp;checkbox.  </p>
+<p><strong>Random Rotation Range</strong>&nbsp;changes how much the lightning can rotate from its initial placement before striking. For full randomness, set it to 360. This will ensure it will randomly strike anywhere on the horizon in 360 degrees.  </p>
+<p><strong>Lightning Blur Intensity</strong>&nbsp;just adjusts the background cloud brightness of the lighting. It applies to some lightning strikes but not all.  </p>
+<p>Finally, you can adjust the&nbsp;<strong>Light Color</strong>&nbsp;and&nbsp;<strong>Lightning Bolt Color</strong>.<br>
+These may not preview in-editor, but they will be applied once the game starts.</p>
+<p>If you wish to adjust the settings of the light that turns on when lightning strikes, please open up the component section of the blueprint and select&nbsp;<strong>Directional Light</strong>.  </p>
+<p>You can then edit any of the details of this light.  </p>
+<p>Once completed, feel free to duplicate this blueprint and rotate it across your horizon</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_Weather_2DLightningLight.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_Weather_2DLightningLight.webp"></a></p>
+<hr>
+<h1 id="3d-foreground-lightning">3D Foreground Lightning</h1>
+<p>Spice up your level with some 3D Foreground lightning!<br>
+This lightning blueprint will strike at random locations, causing sparks and leaving a hit decal mark in its place that fades over time.<br>
+This system has tonnes of customisable settings, so lets jump right in!</p>
+<p>Start by adding&nbsp;<strong>BP_Lightning3D</strong>&nbsp;to your level.<br>
+You can find this in&nbsp;<strong>Content / AlienPhysicsWorld / Blueprints / Atmosphere / Lightning</strong></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_Weather_3DLightningLoc-1024x375.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_Weather_3DLightningLoc-1024x375.webp"></a></p>
+<h2 id="striking-types">Striking Types</h2>
+<p>Before we modify any of the settings, we’ll first need to discuss the two main categories of&nbsp;<strong>Striking Types</strong>&nbsp;and how to apply them.</p>
+<h3 id="1-random-point-in-navigable-radius-strike-on-roofs"><strong>1.) Random Point in Navigable Radius + Strike on Roofs</strong></h3>
+<p>This striking type will cause lightning to randomly strike in any position within your&nbsp;<strong>Nav Mesh Bounds Volume</strong>.<br>
+If it detects a static mesh above the random navigable point that it selected, it will do a line-trace to detect the top of this mesh and strike in that location – leaving a hot decal mark where it struck.<br>
+This simulates what would happen in real life if lightning strikes a roof.  </p>
+<p>To get this working, all you need to do is ensure you have a Nav Mesh Bounds Volume in your level that is positioned in the areas you’ld like lightning to strike.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_Weather_3DLightning_NavMesh-1024x502.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_Weather_3DLightning_NavMesh-1024x502.webp"></a></p>
+<p>If you do not have a&nbsp;<strong>Nav Mesh Bounds Volume</strong>&nbsp;in your level, you can add one via the&nbsp;<strong>Place Actors</strong>&nbsp;toolbox.</p>
+<p>Next, select your&nbsp;<strong>BP_Lightning3D</strong>&nbsp;Actor, and ensure that your Striking Type variable is set to:<br>
+<strong>Random Point in Navigable Radius + Strike on Roofs</strong></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_Weather_3DLightning_NavSetting-1024x501.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_Weather_3DLightning_NavSetting-1024x501.webp"></a></p>
+<h3 id="2-random-target-in-array-sequential-target-in-array"><strong>2.) Random Target in Array</strong>&nbsp;/&nbsp;<strong>Sequential Target in Array</strong></h3>
+<p>If you want to manually control where lightning strikes in your level, you will want to use one of these two settings:  </p>
+<p><strong>1.) Random Target in Array:</strong>&nbsp;Randomly strikes at a location specified by targetpoints listed in the&nbsp;<strong><strong>Striking Location Target Points</strong></strong>&nbsp;array<br>
+<strong>2.) Sequential Target in Array:</strong>&nbsp;Strike the locations specified by targetpoints listed in the&nbsp;<strong><strong>Striking Location Target Points</strong></strong>&nbsp;array, in order from first to last.</p>
+<p><em><strong>IMPORANT NOTE:</strong>&nbsp;If there are no&nbsp;<strong>Target Points</strong>&nbsp;set in the&nbsp;<strong><strong>Striking Location Target Points</strong></strong>&nbsp;array, lightning will only strike in the location of the&nbsp;<strong>BP_Lightning3D</strong>&nbsp;Blueprint!</em></p>
+<p>To use this method, begin by adding some target points into the level, and position them where you would like lightning to strike.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_Weather_3DLightning_TargetPoint-1024x385.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_Weather_3DLightning_TargetPoint-1024x385.webp"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_Weather_3DLightning_TargetPointArray.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_Weather_3DLightning_TargetPointArray.webp"></a></p>
+<p>Now, select your&nbsp;<strong>BP_Lightning3D</strong>&nbsp;Actor.  </p>
+<p>In the details panel, select the&nbsp;<strong>Striking Location Type</strong>&nbsp;as either&nbsp;<strong>Random Target in Array</strong>&nbsp;or&nbsp;<strong>Sequential Target in Array</strong>.  </p>
+<p>Next, Expand the&nbsp;<strong>Striking Location Target Points</strong>&nbsp;array by clicking on the&nbsp;<strong>+</strong>&nbsp;icon.<br>
+Expand it to the number of target points that you placed in the level.  </p>
+<p>Then reference the target points that you placed in the level.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_Weather_3DLightning_TargetPointArray_Filled.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_Weather_3DLightning_TargetPointArray_Filled.webp"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_Weather_3DLightning_TargetPoint_Trace.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_Weather_3DLightning_TargetPoint_Trace.webp"></a></p>
+<p>Finally, the&nbsp;<strong>Strike Targetpoint’s Nearest Surface</strong>&nbsp;checkbox lets you decide whether the lightning should perform a collision trace.  </p>
+<p>If enabled, the lightning will attempt to find a surface below the targetpoint (within 1000 units) and strike if a collision is detected.</p>
+<h2 id="timing-activation">Timing &amp; Activation</h2>
+<p>Lets expand on the settings that control when your lighting should strike.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_Weather_3DLightning_TimingAndStriking.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_Weather_3DLightning_TimingAndStriking.webp"></a></p>
+<p><strong>Striking Delay Min</strong>&nbsp;and&nbsp;<strong>Striking Delay</strong>&nbsp;<strong>Max</strong>&nbsp;determine the time between lightning strikes. After each strike, a random delay within this range is applied before the next strike occurs.  </p>
+<p><strong>Only Strike when Raining</strong>&nbsp;prevents the lightning from striking when it is not raining. Rain is controlled by&nbsp;<strong>BP_WeatherController</strong>.  </p>
+<p><strong>Strike Only When Event Is Called</strong>&nbsp;is a checkbox that turns off randomly-timed automatic lightning strikes.<br>
+If checked, lightning will only strike when&nbsp;<strong>Event_Lightning_Strike</strong>&nbsp;is called.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_Weather_3DLightning_Event.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_Weather_3DLightning_Event.webp"></a></p>
+<h2 id="appearance-color">Appearance &amp; Color</h2>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_Weather_3DLightning_Visibility.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_Weather_3DLightning_Visibility.webp"></a></p>
+<p>In the details panel, if you scroll down to the section titled&nbsp;<strong>Aesthetics</strong>, you will find a range of variables adjusting the intensity and color of your lightning.  </p>
+<p>However, before you modify the light or the lightning, you’ll want to ensure that you can see them in the editor.  </p>
+<p>Tick the&nbsp;<strong>Light Visible in Editor</strong>&nbsp;while editing the&nbsp;<strong>Light Intensity</strong>&nbsp;and&nbsp;<strong>Light Color</strong>.  </p>
+<p>Tick the&nbsp;<strong>Bolt Visible in Editor</strong>&nbsp;while editing the&nbsp;<strong>Bolt Color</strong>.  </p>
+<p><strong>Spacialized Sound –</strong>&nbsp;If this is checked, the sound will be spacialized, meaning that your left and right hearing channels will hear it in 3D. If you want your game to be realistic, leave this disabled&nbsp;<em>(as lighting that strikes very close to you is so loud you wouldn’t normally be able to hear its direction).</em></p>
+<h2 id="particles-sparks">Particles / Sparks</h2>
+<p>If you scroll down to the section titled&nbsp;<strong>Particle Sparks</strong>, you will evertything you need to customise the particles that activate when lightning hits a surface.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_Weather_3DLightning_SparksType.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_Weather_3DLightning_SparksType.webp"></a></p>
+<p>You’ll first want to choose the Sparks Type.<br>
+Your selection will determine when lightning sparks activate.</p>
+<ul>
+<li><strong>No Lightning Sparks</strong></li>
+<li><strong>Always Lightning Sparks</strong></li>
+<li>
+<p><strong>Random Lightning Sparks</strong>  </p>
+</li>
+<li>
+<p><strong>Always Lightning Sparks – if hitting Physical Materials in Array</strong></p>
+</li>
+<li>
+<p><strong>Chance of Lightning Sparks – if hitting Physical Materials in Array</strong>  </p>
+</li>
+<li>
+<p>Will never spawn lightning sparks.</p>
+</li>
+<li>Will spawn lightning sparks every strike, regardless of what physical material it hits.</li>
+<li>Will spawn lightning sparks randomly, regardless of what physical material it hits.<br>
+    Set the&nbsp;<strong>Sparks Spawn Chance</strong>&nbsp;variable to control the frequency.</li>
+<li>Will spawn lightning sparks every strike – but only if it hits an object with one of the physical materials listed in the&nbsp;<strong>Physical Material Array</strong>.</li>
+<li>Will roll a Chance to spawn lightning – but only if it hits an object with one of the physical materials listed in the&nbsp;<strong>Physical Material Array</strong>.<br>
+    Set the&nbsp;<strong>Sparks Spawn Chance</strong>&nbsp;variable to control the frequency.</li>
+</ul>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_Weather_3DLightning_Sparks_PhysMats2.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_Weather_3DLightning_Sparks_PhysMats2.webp"></a></p>
+<p>If you chosen&nbsp;<strong>Lightning Sparks Type</strong>&nbsp;mentions Physical Materials, this means we must add some to the&nbsp;<strong>Physical Materials Array</strong>!  </p>
+<p>This ensures that sparks will activate whenever the lightning strikes one of these physical materials found in this array.</p>
+<p>Feel free to swap out the Sparks Particle for a different one, adjust the Sparks Color, and modify the Sparks Chance to your liking!</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_Weather_3DLightning_Sparks.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_Weather_3DLightning_Sparks.webp"></a></p>
+<p><em>Note: If you want to replace the Sparks Particle while retaining the functionality of editing the&nbsp;<strong>Sparks Color</strong>, you’ll just need to make sure that you create User Exposed Niagara Color Variable called&nbsp;<strong>SparksColor</strong>&nbsp;– and plug this into your particle color and particle material. See&nbsp;<strong>NS_LightningSparks</strong>&nbsp;and&nbsp;<strong>M_LightningSparks</strong>&nbsp;for reference.</em></p>
+<h2 id="damage">Damage</h2>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_Weather_3DLightning_Damage.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_Weather_3DLightning_Damage.webp"></a></p>
+<p>The lightning has the option to cause damage where it strikes.  </p>
+<p>This Damage has a linear falloff.  </p>
+<p>Feel free to adjust the damage intensity or radius.<br>
+If you do not want it to damage anything, set the&nbsp;<strong>Lightning Damage</strong>&nbsp;to 0.  </p>
+<p>This will disable any functions associated with damage.</p>
+<hr>
+<h1 id="parallax-occlusion-landscape-shadows">Parallax Occlusion Landscape Shadows</h1>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_Weather_POM_Screenshot.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_Weather_POM_Screenshot.webp"></a></p>
+<p>Both&nbsp;<strong>2D Background Lighting</strong>&nbsp;and&nbsp;<strong>3D Foreground Lightning</strong>&nbsp;integrate in a way that allows you to cast shadows on any Parallax Occlusion Mapped material.  </p>
+<p>This is especially useful for adding realism to any landscape materials that use Parallax Occlusion Mapping&nbsp;<em>(POM)</em>.</p>
+<h2 id="lightning-pom-shadows">Lightning P.O.M Shadows</h2>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_Weather_POM_MF-1024x557.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_Weather_POM_MF-1024x557.webp"></a></p>
+<p>Unreal’s Parallax Occulsion Mapping node doesnt work with shadows, and the Administrators are too lazy to fix it.  </p>
+<p>However, we developed a fix which you can implement into your own materials.  </p>
+<p>So the first step in getting Shadows working is to replace your&nbsp;<strong>ParallaxOcclusionMapping</strong>&nbsp;node with&nbsp;<strong>MF_ParallaxOcclusionMapping_Fixed</strong></p>
+<p>You can find this in&nbsp;<strong>Content / AlienPhysicsWorld / Materials / MaterialFunctions</strong></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_Weather_POM_Location2-1024x469.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_Weather_POM_Location2-1024x469.webp"></a></p>
+<p>Next, you will need to apply these material nodes to your POM function to enable shadow casting from your lightning blueprints.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_Weather_POM_Material-1024x441.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_Weather_POM_Material-1024x441.webp"></a></p>
+<h2 id="sunlight-pom-shadows">Sunlight P.O.M Shadows</h2>
+<p>Beyond lightning strikes, you can also set the light direction of your parallax occlusion shadows using&nbsp;<strong>BP_POMLightingDirection</strong>.<br>
+It is located at&nbsp;<strong>Content / AlienPhysicsWorld / Blueprints / Atmosphere</strong>  </p>
+<p>Drag this blueprint to the far horizon in the direction of your sunlight, and when you play the game, it will cause the POM shader to cast shadows from that direction.<br>
+You may also adjust the shadow intensity from the blueprint’s details panel as seen in the image below:</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/Documentation_Weather_POM_Blueprint2-1024x613.webp" data-desc-position="bottom"><img alt="" src="../../assets/Documentation_Weather_POM_Blueprint2-1024x613.webp"></a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
+      
+        <script src="../../javascript/extra.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>
