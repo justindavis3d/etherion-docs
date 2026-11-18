@@ -1,0 +1,109 @@
+/* Make all titles bold and white */
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4,
+.md-typeset h5,
+.md-typeset h6 {
+  color: #ffffff;
+  font-weight: bold;
+}
+
+
+
+/* Title Bar Color */
+.md-header {
+  background: linear-gradient(90deg, #3ec542, #3b7e3d);
+}
+
+
+
+/* Title Bar Shadow */
+.md-header__topic {
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+
+
+/* Hovered text is purple */
+.md-typeset a:hover {
+  color: #774eee;
+}
+
+
+
+/* Hides the repeated site title above the sidebar navigation */
+.md-nav--primary .md-nav__title {
+  display: none;
+}
+
+
+
+/* Hides the Made with Material for MkDocs watermark */
+.md-copyright {
+  display: none !important;
+}
+
+
+
+/* Adds breathing room between the end of page content and the footer */
+.md-content__inner {
+  margin-bottom: 4rem;
+}
+
+
+
+/* Vertical background gradient with a slight slant, fixed to the viewport */
+body {
+  background: linear-gradient(170deg, #16171c, #1f232b);
+  background-attachment: fixed;
+}
+
+
+
+
+/* Brighten line spaces */
+.md-typeset hr {
+  height: 2px;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+
+
+
+
+/* Pulsing glow highlight for callouts */
+.glow-pulse {
+  color: #ffffff;
+  font-weight: bold;
+  animation: glow-pulse-anim 1.8s ease-in-out infinite;
+}
+
+@keyframes glow-pulse-anim {
+  0%, 100% {
+    text-shadow: 0 0 4px rgba(119, 78, 238, 0.4);
+  }
+  50% {
+    text-shadow: 0 0 14px rgba(119, 78, 238, 0.9), 0 0 24px rgba(119, 78, 238, 0.5);
+  }
+}
+
+
+
+/* Purple pulsing glow specifically for "PRO" */
+.pro-glow {
+  color: #b98eff;
+  font-weight: bold;
+  animation: pro-pulse-anim 1.8s ease-in-out infinite;
+}
+
+@keyframes pro-pulse-anim {
+  0%, 100% {
+    color: #b98eff;
+    text-shadow: 0 0 4px rgba(154, 90, 255, 0.4);
+  }
+  50% {
+    color: #d5b3ff;
+    text-shadow: 0 0 14px rgba(154, 90, 255, 0.9), 0 0 24px rgba(154, 90, 255, 0.5);
+  }
+}
