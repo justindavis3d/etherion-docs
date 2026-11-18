@@ -1,3 +1,8 @@
 nav:
   - index.md
-  - ...
+  - 1 Installation.md
+  - 2 Using Goblins with Your AI.md
+  - 3 Appearance and Variation.md
+  - 4 Customization Menu.md
+  - 5 Saving and Scripting.md
+  - 6 Troubleshooting.md

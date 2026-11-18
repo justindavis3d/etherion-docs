@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/goblin/3 Adding Goblins to Your Game.md",
+                "file": "docs/goblin/1 Installation.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "3 Adding Goblins to Your Game"
+              "title": "1 Installation"
             }
           }
         ]
@@ -96,7 +96,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/goblin/3 Adding Goblins to Your Game.md",
+                "file": "docs/goblin/1 Installation.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -186,20 +186,31 @@
   },
   "active": "c0231c3e8d979020",
   "lastOpenFiles": [
-    "docs/goblin/2 Demo Scenes.md",
+    "docs/goblin/5 Saving and Scripting.md",
+    "docs/goblin/4 Customization Menu.md",
+    "docs/goblin/6 Troubleshooting.md",
+    "docs/Environment Features/1 Wind System.md",
+    "docs/goblin/images/menu-labelled.webp",
+    "docs/goblin/3 Appearance and Variation.md",
+    "docs/goblin/images/clothes-iris-variation.webp",
+    "docs/goblin/images/Unity_pwxYj9UZgU.webp",
+    "docs/goblin/images/limits-weights.webp",
+    "docs/goblin/images/Unity_49nFAQIQLj.webp",
+    "docs/goblin/2 Using Goblins with Your AI.md",
+    "docs/goblin/images/psF124.tmp",
+    "docs/goblin/images/limits-inspector.webp",
+    "docs/goblin/images/Unity_C1Nae5FZzi.webp",
+    "docs/goblin/images/limits-inspector2.webp",
+    "docs/goblin/images/warpaint-regions.webp",
+    "docs/goblin/images/Unity_m6Cqn7CbAc.webp",
     "docs/goblin/1 Installation.md",
+    "docs/goblin/3 Adding Goblins to Your Game.md",
+    "docs/goblin/2 Demo Scenes.md",
     "docs/goblin/7 Troubleshooting.md",
     "docs/goblin/6 Saving and Scripting.md",
     "docs/goblin/5 Random Goblins.md",
     "docs/goblin/4 Customizing Appearance.md",
-    "docs/goblin/images/thirdperson-play.webp",
-    "docs/goblin/images/Photos_4eJCNFIA6D.webp",
-    "docs/goblin/images/demo-scene-play.webp",
-    "docs/goblin/images/demo-scene-play.webp.webp",
-    "docs/goblin/images/Unity_agcFBJcD4T.webp",
-    "docs/goblin/images/goblin-variants.webp",
     "docs/goblin/index.md",
-    "docs/goblin/images/tmp-import.webp",
     "docs/goblin/8 Troubleshooting.md",
     "docs/index.md",
     "docs/goblin/documentation.md",
@@ -207,29 +218,19 @@
     "docs/goblin/6 Random Goblins.md",
     "docs/goblin/5 Customizing Appearance.md",
     "docs/goblin/4 Playable Third-Person Goblin.md",
-    "docs/goblin/3 Adding Goblins to Your Game.md",
     "docs/goblin/3 Playable Third-Person Goblin.md",
     "docs/goblin/2 Adding Goblins to Your Game.md",
     "docs/goblin/1 Demo Scenes.md",
     "goblin/documentation.md",
     "mkdocs (1).yml",
-    "docs/goblin/images/tmp-import.jpg",
     "docs/goblin/images",
     "docs/goblin",
-    "goblin/images/tmp-import.jpg",
     "goblin/images",
-    "goblin/Images/tmp-import.jpg",
     "goblin/Images",
     "docs/Foliage Physics/1 Installation.md",
     "goblin",
     "New folder",
     "docs/assets/favicon.ico",
-    "docs/assets/Etherion Designs Icon 64.ico",
-    "docs/Resources/Support Guide.md",
-    "docs/Resources/3 FAB – Environment Installation.md",
-    "docs/Resources/2 Lite Features List.md",
-    "docs/Resources/1 Pro Features List.md",
-    "docs/Foliage Physics/2 System Setup.md",
-    "docs/javascript/pro-glow.js"
+    "docs/assets/Etherion Designs Icon 64.ico"
   ]
 }
