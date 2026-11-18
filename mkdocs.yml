@@ -1,4 +1,4 @@
-site_name: Etherion Foliage Plugin Documentation
+site_name: Etherion Designs Documentation
 
 theme:
   name: material
@@ -10,11 +10,14 @@ theme:
     accent: purple
   features:
     - content.code.copy
+    - navigation.tabs
 
 markdown_extensions:
   - pymdownx.highlight
   - pymdownx.superfences
   - attr_list
+  - admonition
+  - pymdownx.details
 
 plugins:
   - search
@@ -23,6 +26,7 @@ plugins:
       wikilinks: true
   - autorefs
   - glightbox
+  - callouts
   
 extra_css:
   - stylesheets/extra.css

@@ -45,14 +45,29 @@ To do it yourself: **Window > TextMeshPro > Import TMP Essential Resources**.
 
 ![TMP Importer window](images/tmp-import.jpg)
 
+### Using HDRP
+
+The pack opens in URP. For HDRP, import the HDRP files over the top once:
+
+1. Make sure your project uses HDRP and has no errors in the Console.
+2. Open an empty scene, so no goblin scene is open.
+3. Recommended: delete these three folders first: `Goblin/Shaders`, `Goblin/Materials` and `Goblin/Demo/Scenes`. Don't delete anything else.
+4. Double-click `Goblin_HDRP.unitypackage` and click **Import**.
+
+The HDRP files replace the URP ones under the same names, so every prefab and scene keeps its materials. Don't open or save a goblin prefab between steps 3 and 4.
+
+> [!tip] Skin looks flat or slightly pink in HDRP
+> The skin uses the `DiffusionProfile_GoblinSkin` diffusion profile. HDRP only uses profiles listed in a **Diffusion Profile List**. Select `M_Goblin_Skin` and click **Fix** if the Inspector shows a warning, or add the profile to the Diffusion Profile List in your Volume or in **Project Settings > Graphics > HDRP**.
+
 ---
 
 ## 2. What's in the pack
 
-Everything lives under `Assets/EtherionDesigns/Goblin/`.
+Everything lives under `Assets/EtherionDesigns/Goblin/`, plus the ARKit Live Link Face Capture tool in `Assets/EtherionDesigns/FaceCapture/`.
 
 ```
 EtherionDesigns/
+├─ FaceCapture/          ARKit Live Link Face Capture, for driving the goblin's face from an iPhone. See its DOCUMENTATION.txt
 └─ Goblin/
    ├─ Animations/        Goblin animation clips (FBX)
    ├─ Characters/        Goblin meshes, prefabs (plain and ragdoll) and the AC_Goblin controller
@@ -73,6 +88,9 @@ EtherionDesigns/
    ├─ UI/                Customization menu prefabs
    └─ Weapons/           Stone age weapon meshes, materials and prefabs
 ```
+
+> [!info] Already own ARKit Live Link Face Capture?
+> Every Etherion Designs pack ships the same FaceCapture files, so importing it again changes nothing. If your copy is newer, untick the `FaceCapture` folder in the import window.
 
 ![Project window showing the pack folders](images/project-folders.png)
 > 📷 **Image:** The Project window with `EtherionDesigns/Goblin` expanded, showing all subfolders.
@@ -106,7 +124,7 @@ The plain prefabs have no physics, movement or camera on them, so they work with
 2. Press **Play**.
 3. Every goblin gets a random look. The customization menu opens on the left.
 4. Drag the sliders to reshape the goblin. Drag with the **left mouse button** to orbit the camera, drag with the **middle mouse button** to move it up, down, left and right, and scroll to zoom.
-5. Press **M** to close or open the menu.
+5. Press **M** to close or open the menu. The camera keeps working with the menu closed.
 
 ![Demo scene in Play mode with the menu open](images/demo-scene-play.png)
 > 📷 **Image:** The Game view in Play mode, showing the customization menu on the left and a goblin in the centre.
@@ -166,6 +184,9 @@ The camera doesn't need a Rigidbody. Remove any other script that moves the same
 3. Add every listed scene to **File > Build Profiles > Scene List**. The Console warns about any that are missing.
 
 In the editor, Escape stops Play mode. **Level Key** and **Quit Key** can be changed, and **Allow Quit** turns Escape off. UI buttons can call `LoadNextLevel()` or `LoadLevel("SceneName")`.
+
+> [!note] Typing in a text box
+> While a text box has focus, for example the archetype name in the menu, the demo shortcuts are ignored: level and quit keys, ragdoll keys, fly camera and third-person movement, and the menu's own M key. Typing a name with an L in it won't switch levels.
 
 ---
 
@@ -454,6 +475,7 @@ PF_GoblinCustomizationMenu      Goblin Customization Menu component
 | Which sliders appear, and where | In the Limits file (see below) |
 | Toggle key | **Toggle Key** on the root object (default M) |
 | Camera speed | **Orbit Speed**, **Pan Speed** and **Zoom Speed** on the root object, under **Camera**. Untick **Enable Camera Orbit** to control the camera yourself |
+| Camera with the menu closed | Tick **Orbit When Closed** (under **Camera**) to keep orbit, pan and zoom working after the menu closes. It's on in the Demo scene. Leave it off in scenes where another script moves the camera, such as the ThirdPerson scene |
 
 Functions you can call from On Click: `Randomize`, `ResetLook`, `SetRotation`, `PreviousGoblin`, `NextGoblin`, `SaveArchetype`, `LoadArchetype`, `DeleteArchetype`, `PreviousArchetype`, `NextArchetype`, `CopyLook`, `PasteLook`, `Open`, `Close`.
 
@@ -587,7 +609,9 @@ string look = goblin.ToJson();
 goblin.FromJson(look);
 ```
 
-Saves are JSON files in `Application.persistentDataPath/GoblinAppearances`. Open the folder with **Tools > Etherion Designs > Goblin > Open Save Folder**.
+Saves are JSON files in `Application.persistentDataPath/GoblinAppearances`: one file per save slot, plus `Presets.json` for archetypes players save from the menu in a build. Open the folder with **Tools > Etherion Designs > Goblin > Open Save Folder**.
+
+On Windows builds that's `C:\Users\<user>\AppData\LocalLow\<Company Name>\<Product Name>\GoblinAppearances`. Company Name and Product Name come from **Project Settings > Player**, so changing them starts a new, empty save folder.
 
 > [!warning] While testing
 > A saved look always wins over a newly generated one. If your goblins stop changing between runs, use **Tools > Etherion Designs > Goblin > Delete Saved Appearances**.
@@ -643,6 +667,8 @@ Vector3 velocity = character.Velocity;
 | The level key does nothing | Add the scene to **File > Build Profiles > Scene List** and check its name in **Levels** |
 | The goblin slides or snaps back while walking | On the walk and run clips, untick **Root Transform Position (XZ) > Bake Into Pose** |
 | The ragdoll goblin keeps walking after Die() | Add your movement or AI script to **Disable On Death** on the Ragdoll component |
+| The camera stops moving when I close the menu | Tick **Orbit When Closed** on the menu, under **Camera** |
+| HDRP: the skin has no soft subsurface look | Add `DiffusionProfile_GoblinSkin` to a **Diffusion Profile List** (see [Using HDRP](#using-hdrp)) |
 | Two cameras, or the view is wrong with `PF_Demo_GoblinPlayer` | Delete the scene's own Main Camera. The demo prefab brings its own |
 | Inner faces show through on the belt | Select `M_Goblin_Clothes` and set **Surface Type** to **Opaque** with **Alpha Clipping** on. Transparent draws the inner straps over the outer ones |
 
